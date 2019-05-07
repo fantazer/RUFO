@@ -2,5 +2,69 @@ include block_html/_style.pug
 include block_html/_include.pug
 
 +header()
+.head
+	.head-top-wrap
+		.main-cont
+			.head-top
+				-
+					var items = [
+						'Главная','Оплата','Доставка','Гарантии','Сертификаты','Инструкции','Контакты','Распродажа'
+						];
+				each item in items
+					a(href="#").head-top__el #{item}
 
+	.main-cont
+		.header
+			a(href="/").header-logo
+				img(src="img/logo.png", alt="")
+			.header-location Москва
+			.header-contact-wrap
+				.header-contact
+					.header-contact__icon
+						+icon("phone","icon")
+					.header-contact__text Заказать обратный звонок
+				.header-contact
+					.header-contact__icon
+						+icon("mail","icon")
+					.header-contact__text Оставить сообщение
+			a(href="tel:8(495) 789-89-90").header-phone 8(495)789-89-90
+			.header-lk
+				.header-lk__icon
+					+icon("enter","icon")
+				.header-lk__cont
+					.header-lk__text Личный кабинет
+					.header-lk__log Войти
+	.nav
+		.main-cont
+			.nav-wrap
+				.nav-cat
+					.nav-cat__icon
+						+icon("menu","icon")
+					.nav-cat__text Каталог товаров
+				form(action="#").search
+					input(type="text" placeholder="Я ищу").input
+					.search-get
+						+icon("magnifying-glass","icon")
+
+				.cart
+					.cart__icon
+						+icon("cart","icon")
+						span.cart-val 4
+					.cart__cont
+						.cart__text Заказ на сумму
+						.cart__cost 8800 р
+
+.banner(style="background-image:url('https://www.indigorenderer.com/sites/default/files/images/Angel-v-1-2_TM-3_fog.jpg')")
+	.filter
+	.banner-content
+		.main-cont
+			.banner-wrap
+				.banner-text-slogan
+					.banner-text лучший выбор
+					.banner-title Кровельных систем
+					.banner-title-sub Наша продукция имеет множество форм,вариаций и цветовых решений. Каждая ваша идея будет воплощена в жизнь.
+				.banner-worker
+					img(src="img/man.png", alt="")
+
+.content
 include ./block_html/_script.pug

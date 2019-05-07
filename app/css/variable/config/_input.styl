@@ -1,23 +1,24 @@
-// === Inputs ===
-.input,.textarea,.select
-	padding 18px 15px
-	border 1px solid $border-color
+input,textarea,select
+	+below(768px)
+		padding: 15px 10px
+	padding 20px
+	border 0
 	resize: none
 	outline: 0 !important
 	border-radius 4px
 	font-family $v-font
 	display block!important
 	placeholder(#888888)
-	background: #f6f6f6
+	background: #f5f5f5
 	tr(all)
-	&:focus
-		border 1px solid $mark
-		background: white
+	//&:focus
+	//	border 1px solid blue
 
 .style-label
 	display flex
 	position relative
 	align-items center
+
 
 .style-label--disable
 	@extend .disabled
@@ -28,30 +29,27 @@
 		top 0
 		left -9999px
 	.sytle-input-element
-		br(2px)
-		cp()
-		tr(all)
-		width 32px
-		height 32px
+		size 20px
 		position relative
 		display inline-block
-		margin-right 30px
-		background white
-		border 1px solid $border-color
+		margin-right 10px
+		background-color #f3f3f3
+		br(3px)
+		cp()
+		tr(all)
 		&:hover
-			border 1px solid $mark
+			background-color yellow
 	.icon-check
 		display none
 	.sytle-input
-		&:checked ~ .sytle-input-element
+		&:checked + .sytle-input-element
 			flex(mid)
 			color white
-			background: $mark
-			border 1px solid $mark
+			background-color yellow
 			.icon-check
 				display block
-				fill white
-				size 16px
+				fill #000000
+				size 12px
 
 .style-label--radio
 	input
@@ -59,32 +57,24 @@
 		top 0
 		left -9999px
 	.sytle-input-element
-		width 32px
-		height 32px
+		width 20px
+		height 20px
 		position relative
 		display inline-block
-		margin-right 30px
-		background white
-		border 1px solid $border-color
+		margin-right 10px
+		background #f5f5f6
+		border 1px solid #cfcfcf
 		round()
 		cp()
 	.icon-check
 		display none
 	.sytle-input
-		&:checked ~ .sytle-input-element
+		&:checked + .sytle-input-element
 			flex(mid)
 			color white
-			box-shadow 0 2px 4px rgba(0, 45, 135, 0.16)
-			border-color white
 			background: white
+			border 1px solid yellow
 			.icon-radio
 				round()
-				size 16px
-				background $mark
-
-.sytle-input-text
-	color black
-	width: calc(100% - 80px)
-	line-height: 1.6
-	a
-		color $mark
+				size 12px
+				background yellow;

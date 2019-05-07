@@ -1,31 +1,11 @@
-//  ============================ Typography ============================
-
-//webfont('RUB', 'rouble-webfont', 'normal')
-//Add fotn rub write .rub a - (a,b,c,d - change type font)
-
 $v-font =  'Roboto', sans-serif
+
+webfont('PF Beau Sans Pro', 'PFBeauSansPro-Black', '900')
 
 typeSize(fontSm,font)
 	+below(768px)
 		font-size font px
 	font-size fontSm px
-
-/*
-font-size 14px
-@extend .type--sm
-
-font-size 20px
-@extend .type--main
-
-font-size 24px
-@extend .type--md
-
-font-size 30px
-@extend .type--lg
-
-font-size 40px
-@extend .type--xl
-*/
 
 .type--xs
 	typeSize(12,10)
@@ -34,24 +14,36 @@ font-size 40px
 	typeSize(14,12)
 
 .type--main
-	typeSize(16,14)
+	typeSize(15,13)
 
 .type--md
-	typeSize(18,15)
+	typeSize(20,16)
 
 .type--lg
-	typeSize(26,18)
+	typeSize(24,18)
 
 .type--xl
-	typeSize(36,20)
+	typeSize(50,24)
 
 .type--bold
 	font-weight bold
+	font-family: "PT sans"
+
+
+.title--md
+	@extend .type--lg
+	font-family "PF Beau Sans Pro"
+	font-weight 900
+	text-transform uppercase
+	margin-bottom: 20px
+
 
 h1
 	@extend .type--xl
+	font-family: PF Beau Sans Pro
 h2
 	@extend .type--lg
+	font-family: PF Beau Sans Pro
 h3
 	@extend .type--main
 h4
@@ -60,32 +52,29 @@ h5
 	@extend .type--xs
 
 a
-	color $link-color
-	&:hover
-		color darken($link-color,20)
-	&:visiter
-		color darken($link-color,30)
+	color black
+	text-decoration: none
 
-p
-	@extend .type--main
-
-.link--mark
-	color $blue
+.link--blue
+	tr(all)
+	color blue
+	text-decoration: underline
 	&:hover
-		color darken($mark,20)
-	&:visiter
-		color darken($mark,30)
-
-.link--main
-	color $link-color
-	hover-underline($link-color)
-	&:hover
-		color darken($link-color,20)
-	&:visiter
-		color darken($link-color,30)
+		color #0178f2
+		text-decoration: none
 
 .link--text
-	color $link-color
-	text-decoration underline
+	tr(all)
+	text-decoration: underline
+	color black
+	opacity .7
 	&:hover
-		text-decoration none
+		opacity 1
+		text-decoration: none
+
+
+.link--main
+	color black
+	hover-underline(blue)
+	&:hover
+		color black

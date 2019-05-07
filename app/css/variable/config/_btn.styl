@@ -1,11 +1,30 @@
 // ============================ Buttons ============================
+
+btnStyle(bg-btn,color-btn)
+	background bg-btn
+	color color-btn
+	border 1px solid color-btn
+	&:hover
+		background darken(bg-btn,20)
+		color color-btn
+
+btnStyleLight(br-btn,color-btn)
+	color color-btn
+	border br-btn solid color-btn
+	&:hover
+		color darken(color-btn,20)
+		border br-btn solid darken(color-btn,20)
+
 .btn
 	up()
-	br(4px)
 	tr(all)
+	br(15px)
 	display inline-block
 	background none
-	border 0
+	border 0px
+	color black
+	font-family "PF Beau Sans Pro"
+	font-weight: 900
 	text-align: center
 	&:hover
 		cursor pointer
@@ -14,16 +33,20 @@
 	@extend .btn
 	font-size 10px
 	padding 5px 10px
+	.nav-icon
+		size 10px
 
 .btn--md
 	@extend .btn
-	font-size 15px
-	padding 20px 45px
+	br(20px)
+	@extend .type--main
+	padding 10px 50px
 
 .btn--lg
 	@extend .btn
-	font-size 20px
-	padding 10px 30px
+	@extend .type--md
+	br(30px)
+	padding 20px 95px
 
 .btn--mobile
 	@extend .btn
@@ -31,16 +54,16 @@
 		width 100%
 		text-align center
 
-.btn--mark
+.btn--yellow
 	@extend .btn
-	color white
-	background $mark
+	background-color yellow
 	.nav-icon
 		fill white
 	&:hover
-		background-color darken($mark,20)
+		color #000000
+		background: light-yellow
 	&:active
-		background-color darken($mark,20)
+		color #000000
 	input[type="submit"]
 		border 0
 	.nav-icon
@@ -54,30 +77,24 @@
 
 .btn--light
 	@extend .btn
+	color black
 	border 1px solid $border-color
 	background-color #ffffff
 	&:hover
-		border 1px solid $mark
+		background-color #f0f0f0
+	&:active
+		background-color yellow
+		border 1px solid yellow
 	.nav-icon
-		fill $mark
-
-.btn--white
-	@extend .btn
-	border 1px solid rgba(255, 255, 255, 0.9)
-	color rgba(255, 255, 255, 0.9)
-	.nav-icon
-		fill rgba(255, 255, 255, 0.9)
+		fill black
 
 .btn--icon
 	flex(mid)
 
 .nav-icon
-	size 20px
 	display inline-block
+	size 20px
+	margin 0 10px
 
-.nav-icon--left
-	margin-left 10px
-
-.nav-icon--right
-	margin-rihgt 10px
-
+button
+	font-family $v-fon
