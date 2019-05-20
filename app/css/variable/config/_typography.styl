@@ -1,4 +1,4 @@
-$v-font =  'Roboto', sans-serif
+$v-font =  'PT sans', sans-serif
 
 webfont('PF Beau Sans Pro', 'PFBeauSansPro-Black', '900')
 
@@ -11,7 +11,7 @@ typeSize(fontSm,font)
 	typeSize(12,10)
 
 .type--sm
-	typeSize(14,12)
+	typeSize(12,12)
 
 .type--main
 	typeSize(15,13)
@@ -23,34 +23,35 @@ typeSize(fontSm,font)
 	typeSize(24,18)
 
 .type--xl
-	typeSize(50,24)
+	typeSize(32,24)
 
 .type--bold
 	font-weight bold
-	font-family: "PT sans"
+	font-family: "PF Beau Sans Pro"
+	color black
 
 
 .title--md
 	@extend .type--lg
-	font-family "PF Beau Sans Pro"
-	font-weight 900
 	text-transform uppercase
 	margin-bottom: 20px
 
 
 h1
 	@extend .type--xl
-	font-family: PF Beau Sans Pro
+	color black
 h2
 	@extend .type--lg
-	font-family: PF Beau Sans Pro
+	color black
 h3
 	@extend .type--main
+	color black
 h4
 	@extend .type--sm
+	color black
 h5
 	@extend .type--xs
-
+	color black
 a
 	color black
 	text-decoration: none

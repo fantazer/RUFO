@@ -79,7 +79,7 @@ br(a){
 
 tr(a='all'){
 	transition a .4s
-} 
+}
 
 f()
 	display flex
@@ -87,24 +87,24 @@ fl()
 	flex-flow column
 fw()
 	flex-wrap wrap
-	
+
 cp()
 	&:hover
 		cursor pointer
-		
+
 round()
 	border-radius 50%
 bsh()
 	box-shadow 0px 3px 8px #e3e3e3
-	
+
 up()
 	text-transform uppercase
-	
+
 bold()
 	font-weight 700
-	
+
 placeholder(color)
-	input::-webkit-input-placeholder 
+	input::-webkit-input-placeholder
 		color:color
 	input::-moz-placeholder
 		color:color
@@ -112,7 +112,7 @@ placeholder(color)
 		color:color
 	input:-ms-input-placeholder
 		color:color
-		
+
 //main cont
 center(val,pad)
 	*zoom: 1
@@ -125,17 +125,17 @@ center(val,pad)
 	padding-left: 0
 	padding-right: 0
 	&:before,
-	&:after 
+	&:after
 		content: ''
 		display: table
-	&:after 
+	&:after
 		clear: both
 	position relative
 	width 100%
 	padding  0 pad
 	+above(val px)
 		width val px
-		
+
 // Function
 //
 //
@@ -145,7 +145,7 @@ center(val,pad)
 //Triangle
 //
 // triangle($direction,$size,$color)
-// 
+//
 //Template - triangle: 'right' 13px red
 //$direction - Direction the triangle points: "up", "down", "left", or "right". Default is "up".
 //$size - Size of the triangle in pixels. Default is 10px.
@@ -445,8 +445,8 @@ webfont(family, file, hack-chrome-windows = false, weight = 'normal')
 		font-family family
 		src url(font-url(file + '.eot'))
 		src url(font-url(file + '.eot?#iefix')) format('embedded-opentype'),
-			url(font-url(file + '.woff')) format('woff'), 
-			url(font-url(file + '.ttf')) format('truetype'), 
+			url(font-url(file + '.woff')) format('woff'),
+			url(font-url(file + '.ttf')) format('truetype'),
 			url(font-url(file + '.svg#'+ family)) format('svg')
 		font-weight weight
 		font-style normal
@@ -456,8 +456,14 @@ bg-full()
 	background-size cover
 	background-repeat no-repeat
 	background-position center center
-	
+
 focus(color)
 	&:focus
 		border-color color
 		box-shadow 0 0 3px 1px rgba(color, 0.45)
+
+bsh-hover()
+	box-shadow 0px 3px 3px #e3e3e3
+	transition box-shadow .8s
+	&:hover
+		box-shadow 0 18px 32px #e3e3e3

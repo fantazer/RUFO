@@ -16,7 +16,7 @@ body
 	color $main-text-color
 	line-height 1.2
 	letter-spacing 0.01em
-
+	background: #fbfbfb
 .main-cont
 	center(1200px,10px)
 
@@ -35,35 +35,38 @@ body
 .header-contact
 	flex(mid)
 	cp()
+	margin-right: 3%
 .header-contact__icon
 	margin-right: 10px
+	flex(mid)
 	.icon
-		size 20px
+		size 16px
 		fill $green
 .header-contact__text
-	font-size: 14px
+	font-size: 12px
 	opacity: .7
 .header-phone
 	margin-left: auto
 	@extend .type--lg
 	@extend .type--bold
 .header-contact-wrap
-	width: 35%
-	flex(between)
+	f()
+	align-items: center
 //.nav
 
 .head-top-wrap
 	background: $bg-gray
-
-.head-top
-	padding: 10px 0
+	padding: 5px 0
+.menu
+	padding: 10px 0 10px 10px
 	f()
+	justify-content: space-between
 	align-items: center
-.head-top__el
-	margin-right: 3%
-	font-size: 12px
-	opacity: .4
+	width calc(100% - 400px)
+.menu__el
+	color white
 	tr(all)
+	padding: 10px 15px
 	&:hover
 		opacity: 1
 
@@ -74,7 +77,7 @@ body
 .header-lk__icon
 	margin-right: 10px
 	.icon
-		size 25px
+		size 20px
 		fill $green
 .header-lk__text
 	font-size: 12px
@@ -90,32 +93,33 @@ body
 	align-items: stretch
 .nav-cat
 	flex(mid)
-	padding:15px 10px
+	padding:15px 20px
+	background: $yellow
+	width: 200px
 .nav-cat__icon
 	margin-right: 10px
 	flex(mid)
 	.icon
-		fill white
-		size 22px
+		fill black
+		size 18px
 .nav-cat__text
-	color white
-	font-size: 16px
+	color black
+	font-weight: 700
 .search
-	width: 60%
+	width: 35%
 	margin:0 auto
 	flex(mid)
 	position: relative
 	.input
 		width: 100%
 		padding: 10px 20px
-		background: white
 		br(3px)
 
 .search-get
 	position: absolute
 	right: 15px
 	.icon
-		size 20px
+		size 15px
 
 
 .cart
@@ -123,6 +127,7 @@ body
 	margin-left: 1%
 	padding: 0 20px
 	background: #4ca33e
+	width: 170px
 .cart__icon
 	margin-right: 15px
 	position: relative
@@ -152,10 +157,10 @@ body
 	padding: 17% 10%
 	position: relative
 	bg-full()
-	position: relative
 
 .content
-	height: 1000px
+	p
+		line-height: 1.4
 
 .filter
 	position: absolute
@@ -180,6 +185,8 @@ body
 	position: relative
 	height: 100%
 .banner-worker
+	+below(1440px)
+		right: 10%
 	width: 22vw
 	position: absolute
 	right: 0
@@ -205,3 +212,1018 @@ body
 	line-height: 1.6
 	font-weight: 300
 
+.section
+	padding: 60px 0
+.section-title
+	@extend .type--lg
+	@extend .type--bold
+	margin-bottom: 30px
+.section--gray
+	background: #f3f3f3
+.items
+	display: grid
+	grid-gap 20px
+	grid-template-columns: repeat(4,1fr)
+
+.item
+	padding: 20px 20px 30px 20px
+	position: relative
+	cp()
+	bsh-hover()
+	background: white
+
+.items-popular
+	.item
+		margin: 20px 0 30px 0
+.item-label
+	position: absolute
+	top 10px
+	left 0
+	color white
+	width: 60px
+	padding: 5px 15px
+	overflow: hidden
+	border-radius 0 2px 2px 0
+.item-label__cont
+	position: relative
+	width: 100%
+	height: 100%
+	&:before
+		content ''
+		size 30px
+		background: white
+		position: absolute
+		top -7px
+		right: -42px
+		transform rotate(45deg)
+		br(3px)
+.item-label--hit
+	background: $red
+
+.item-label--new
+	background: $green
+.item__img
+	padding: 40% 10%
+	bg-full()
+	background-size: contain
+	margin: 20px
+.item-info
+	flex(mid)
+	fl()
+.item__title
+	@extend .type--md
+	margin-bottom: 20px
+	text-align: center
+	font-family: "PT sans"
+	font-weight: 700
+
+.item__descr
+	margin-bottom: 20px
+	font-family: "PT sans"
+	text-align: center
+	line-height: 1.4
+.item__cost
+	text-align: center
+	font-size: 22px
+	@extend .type--bold
+	margin-bottom: 20px
+.item__get
+	@extend .btn--md
+	@extend .btn--yellow
+
+.slick-slide
+	margin: 0 5px
+.slick-list
+	margin: 0 -5px
+
+//for custom navigation
+.slider-wrap
+	position: relative
+.slider-control
+	flex(mid)
+	tr(all)
+	position: absolute
+	top 50%
+	z-index 10
+	cp()
+	br(2px)
+	margin-top: -12px
+	&:hover
+		background: $gray
+	.icon
+		size 18px
+.slider-control--green
+	.icon
+		fill $green
+.slider-control--left
+	left -10px
+.slider-control--right
+	right -10px
+
+.review
+	display: grid
+	grid-gap 20px
+	grid-template-columns: repeat(5, 1fr)
+	align-items:stretch
+
+.review__el
+	background: red
+	f()
+	fl()
+	&:nth-child(1)
+		grid-column 1/3
+.review__el--sm
+	.review__el-img
+		padding: 40% 10%
+	.review__el-content
+		padding: 20px
+.review__el--rotate
+	.review__el-date
+		top initial
+		bottom -15px
+.review__el-img
+	bg-full()
+	padding: 20% 10%
+.review__el-content
+	padding: 30px 20px
+	background: white
+	position: relative
+	flex-grow 1
+.review__el-date
+	background: $green
+	color white
+	padding: 5px 10px
+	display: inline-block
+	position: absolute
+	top -15px
+	left 20px
+	font-size: 12px
+.review__el-title
+	font-weight: 700
+	margin-bottom: 20px
+.review__el-text
+	line-height: 1.4
+	font-size: 14px
+	margin-bottom: 10px
+.review__el-more
+	text-decoration: underline
+	font-size: 12px
+	font-weight: 700
+
+.footer
+	background: white
+	padding: 60px 0
+//.main-cont
+.footer-wrap
+	display: grid
+	grid-gap 20px
+	grid-template-columns: repeat(5, 1fr)
+//.footer-col
+.footer__title
+	@extend .type--bold
+	margin-bottom: 20px
+//.footer__list
+.footer__list-el
+	margin-bottom: 10px
+.footer-logo
+	margin-bottom: 20px
+.footer-phone
+	@extend .type--bold
+	font-size: 22px
+	margin-bottom: 10px
+.footer-callback
+	text-decoration: underline
+	color $green
+
+@-webkit-keyframes slideInDown {
+	from {
+		transform: translate3d(0, -100%, 0);
+		visibility: visible;
+	}
+
+	to {
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+.shrink
+	position fixed
+	top 0
+	left 0
+	width 100%
+	margin 0
+	animation:  slideInDown  1s 1 ease-in-out;
+	z-index 100
+
+.tools
+	display: grid
+	grid-gap 20px
+	grid-template-columns: repeat(4, 1fr)
+	margin-bottom: 60px
+.tools__el
+	f()
+	align-items: center
+	padding: 20px
+	background: white
+	cp()
+	border 1px solid #ececec
+	br(5px)
+.tools__el-img
+	.icon
+		size 50px
+		fill $green
+	margin-right: 20px
+.tools__el-text
+	width: 50%
+	font-weight: 700
+	color black
+
+.advant
+	display: grid
+	grid-gap 20px
+	grid-template-columns: repeat(4, 1fr)
+	grid-template-row: repeat(3, 1fr)
+
+.advant-el--slogan
+	grid-column 1/3
+	grid-row 1/2
+	padding: 0
+.advant-slogan
+	font-size: 110px
+	font-weight: 700
+	color black
+	line-height: 1
+	up()
+	padding: 0
+.advant-el
+	padding: 30px
+	f()
+	fl()
+	justify-content: center
+.advant-el--old
+	grid-column 3/5
+	background: #53ae44
+	padding: 0 6%
+	.advant-el__title
+		font-size: 64px
+		color white
+		margin-bottom: 0
+	.advant-el__text
+		color white
+.advant-el--service
+	grid-row 2/4
+	background: #f3f3f3
+	.advant-el__title
+		margin-bottom: 0
+	ul
+		padding-left: 20px
+	li
+		margin-bottom: 5px
+.advant-el--garant
+	grid-column 2/3
+	border 3px solid #f3f3f3
+.advant-el--ekonom
+	grid-column 3/5
+	border 3px solid #53ae44
+.advant-el--choice
+	grid-column 2/3
+	border-bottom 3px solid #53ae44
+.advant-el--person
+	grid-column 3/5
+	background: #f3f3f3
+.advant-el__title
+	font-size: 28px
+	font-weight: 700
+	color black
+	margin-bottom: 15px
+
+.advant-el__text
+	line-height: 1.6
+	font-size: 14px
+
+
+//work
+
+.nice-select
+	br(20px)
+	display: block
+	color #000000
+	font-size 14px
+	font-weight 700
+	height: 36px
+	line-height: 36px
+	.list
+		width: calc(100% )
+		left 0px
+		border-radius 0 0 5px 5px
+		border 0px solid $border-color
+		border-top 0
+		margin-top: 0
+		li
+			white-space: nowrap
+			overflow: hidden
+			text-overflow: ellipsis
+	.current //max width dots
+		white-space nowrap
+		overflow hidden
+		text-overflow ellipsis
+		display inline-block
+		max-width 120px
+		font-weight: 400
+
+.nice-select.open
+	border-radius 5px 5px 0 0
+
+select.select-beauty
+	display none!important
+
+.element-select
+	padding: 20px 0
+
+.nice-select:active, .nice-select.open, .nice-select:focus
+	border 1px solid $border-color
+
+.bread
+	+below(640px)
+		display: none
+	f()
+	fw()
+	padding: 20px 0
+
+.bread__el
+	margin-right: 15px
+	margin-bottom: 10px
+	position: relative
+	font-size: 12px
+	color #7e7e7e
+	&:after
+		content '-'
+		position: absolute
+		right: -10px
+		top 1px
+	&:last-child
+		&:after
+			content ''
+			display: none
+	&:first-child
+		font-weight: 700
+
+.goods-banner
+	margin: 20px 0
+.goods-banner__el
+	bg-full()
+	padding: 5% 10%
+.goods
+	f()
+	justify-content: space-between
+	margin-bottom: 40px
+.toolbar
+	width: 285px
+.toolbar-box
+	border 1px solid $border-color
+	background-color #ffffff
+	margin-bottom: 20px
+	br(5px)
+
+.toolbar-box--open
+	.toolbar-head__icon
+		transform rotate(-180deg)
+.toolbar-box-head
+	f()
+	justify-content: space-between
+	cp()
+	padding: 20px
+
+.toolbar-head__title
+	font-size 16px
+	font-weight 700
+	text-transform uppercase
+	width:calc(100% - 40px)
+	color  black
+.toolbar-head__icon
+	flex(mid)
+	transform-origin center center
+	tr(all)
+	.icon
+		size 15px
+.toolbar-box-cont
+	border-top 1px	solid $border-color
+	padding: 20px
+	display: none
+
+
+
+//.goods-list
+.goods-list__el
+	margin-bottom: 20px
+	font-size: 15px
+	display: block
+	tr(all)
+	color #4e4e4e
+	&:hover
+		color $green
+	&:last-child
+		margin-bottom: 0
+.goods-profile
+	display: grid
+	grid-row-gap 10px
+	grid-column-gap 20px
+	grid-template-columns: repeat(2, 1fr)
+.goods-profile__el
+	cp()
+.goods-profile__el-title
+	font-size: 12px
+	margin-bottom: 5px
+.goods-profile__el-img
+	bg-full()
+	padding: 40% 10%
+	position: relative
+
+.goods-profile__el-style
+	bg-full()
+	padding: 2% 5%
+//.style-label
+//.style-label--checkbox
+//.sytle-input.goods-profile__el-wrap
+//.sytle-input-element
+//.icon-check
+//.sytle-input-text
+.goods-cont
+	width calc(100% - 315px)
+.goods-serch
+	f()
+	fw()
+	margin-bottom: 30px
+.goods-serch__title
+	fw()
+	margin-right: 10px
+	margin-bottom: 5px
+	font-weight: 700
+.goods-serch__list-el
+	display inline-block
+	margin 0 5px 5px 5px
+	background #ededed
+	padding 3px 10px
+	border-radius 10px
+	font-size 12px
+	tr(all)
+	&:hover
+		background: $green
+		color white
+.goods-profile__el-wrap
+	position: relative
+	.check-el
+		position: absolute
+		top 7px
+		right: 0px
+		margin-right: 0
+
+.scroll
+	position: relative
+	height: 400px
+
+
+//visible scrollbar
+.ps__scrollbar-y-rail
+  background-color #eaeaea !important
+  opacity 1!important
+
+.ps > .ps__scrollbar-y-rail:hover > .ps__scrollbar-y, .ps > .ps__scrollbar-y-rail:active > .ps__scrollbar-y
+	width: 10px
+.ps > .ps__scrollbar-y-rail
+	width: 10px
+	background-color #f6f6f6!important
+	opacity 1!important
+
+
+.filter__color
+	+below(768px)
+		f()
+		fw()
+	justify-content center
+	display grid
+	grid-template-columns repeat(auto-fit, minmax(36px,1fr) )
+	grid-gap 10px
+.filter__color-el--active
+	.filter__color-ico
+			opacity 1
+
+.filter__color-ico
+	tr(all)
+	.icon
+		size 17px
+		fill white
+	opacity 0
+
+.filter__color-el--white
+	border 1px solid #e1e1e1
+	.icon
+		fill black
+.filter__color-el
+	+below(768px)
+		margin: 5px
+	flex(mid)
+	tr(all)
+	size 42px
+	br(3px)
+	cp()
+	&:hover
+		.filter__color-ico
+			opacity 1
+
+.irs--flat .irs-bar
+	background: $green
+
+.irs--flat .irs-handle > i:first-child
+	background: $green!important
+
+.irs--flat .irs-from, .irs--flat .irs-to, .irs--flat .irs-single
+	background: $green
+
+.irs--flat .irs-from:before, .irs--flat .irs-to:before, .irs--flat .irs-single:before
+	content ''
+	border-top-color $green
+
+.toolbar-doc
+	&:hover
+		.icon
+			fill $green
+		.toolbar-doc__text
+			color $green
+	f()
+	margin-bottom: 20px
+.toolbar-doc__icon
+	.icon
+		tr(all)
+		size 40px
+	margin-right: 20px
+.toolbar-doc__text
+	tr(all)
+	width calc(100% - 60px)
+	color #4e4e4e
+.sort
+	f()
+	align-items: center
+	margin-bottom: 30px
+.sort-el
+	f()
+	justify-content: center
+	align-items: center
+	margin-right: 30px
+.sort-el__name
+	margin-right: 10px
+	font-weight: 700
+//.sort-el__list
+//.select-beauty
+.sort-val
+	margin-left: auto
+	span
+		font-weight: 700
+
+.sort-el--type
+	.nice-select
+		width: 150px
+
+.goods-el
+	br(5px)
+	f()
+	justify-content: space-between
+	margin-bottom: 30px
+	border 1px solid $border-color
+	background: white
+	padding: 20px
+.goods-el-view
+	width: 30%
+.goods-el-img
+	bg-full()
+	background-size contain
+	padding: 50% 10%
+	margin-bottom: 20px
+//.goods-img-list
+.goods-img-list__el
+	bg-full()
+	br(5px)
+	cp()
+	size 60px
+	background-size: contain
+	padding: 5px
+	border 1px solid $border-color
+	tr(all)
+	&:hover
+		border-color $green
+.goods-el-info
+	width: 67%
+.slider-wrap-img-list
+	padding: 0 10px
+.goods-img-list__el--active
+	border-color $green
+.goods-title
+	font-size: 28px
+	font-weight: 700
+	margin-bottom: 15px
+	display: block
+	color black
+.goods-price
+	f()
+	font-size: 18px
+	align-items: center
+	margin-bottom: 30px
+.goods-price-text
+	margin-right: 10px
+.goods-price-val
+	font-size: 24px
+	font-weight: 700
+	color $red
+
+.goods-type
+	flex(between)
+	margin-bottom: 15px
+.goods-type__el
+	width: 30%
+	.select-beauty
+		width: 100%
+
+.goods-type__el-val
+	font-weight: 700
+
+.goods-descr
+	f()
+	justify-content: space-between
+
+.goods-gabarites
+	width: 65%
+.goods-size
+	flex(between)
+	padding: 10px
+	border 1px solid $border-color
+	br(5px)
+.goods-size__el
+	f()
+	align-items: center
+	width: 31%
+
+.goods-size__el-text
+	font-size: 12px
+	margin-right: 10px
+.goods-size__el-val
+	.input
+		padding: 10px
+		width: 100%
+		font-size: 12px
+.goods-size__el-cost
+	font-weight: 700
+
+.goods-gabarites-add
+	text-align: center
+	color gray
+	margin: 10px 0
+	display: block
+.goods-meters
+	span
+		font-weight: 700
+		font-size: 18px
+		color black
+		sup
+			font-size: 10px
+	margin-bottom: 10px
+.goods-get
+	@extend .btn--md
+	@extend .btn--green
+	width: 100%
+	padding: 15px
+	br(10px)
+	font-size: 18px
+	margin: 10px 0
+.goods-compare
+	text-align: center
+	display: block
+	text-decoration: underline
+	color blue
+	margin-bottom: 10px
+.goods-text
+	color gray
+	font-size: 10px
+.goods-consist
+	width: 30%
+//.goods-scale
+.goods-scale__el
+	f()
+	justify-content: space-between
+	border-bottom 1px solid $border-color
+	padding-bottom: 5px
+	margin-bottom: 5px
+	font-size: 12px
+.goods-scale__el-text
+	width: 70%
+//.goods-scale__el-val
+.goods-scale-more
+	width: 100%
+	padding:5px 10px
+	border 1px solid blue
+	display: block
+	text-align: center
+	font-size: 12px
+	color blue
+	br(10px)
+	margin-top: 20px
+
+.pagination
+	f()
+	align-items: center
+	margin: 20px 0 40px 0
+.pagination__el
+	flex(mid)
+	br(5px)
+	tr(all)
+	size 30px
+	border 1px solid $border-color
+	margin-right: 10px
+	cp()
+	&:hover
+		background: $green
+		color white
+		border-color $green
+	&:last-child
+		margin-right: 0
+.pagination__el--active
+	background: $green
+	color white
+	border-color $green
+
+.buy-add
+	padding: 20px 20px 40px 20px
+	border 1px solid $green
+	background: white
+	br(5px)
+	margin-bottom: 40px
+.buy-add-title
+	text-align: center
+	font-size: 18px
+	font-weight: 700
+	margin-bottom: 20px
+
+.buy-add-list__el-wrap
+	flex(mid)
+	fl()
+.buy-add-list__el-img-cont
+	br(5px)
+	border 1px solid $border-color
+	padding: 5px
+	margin-bottom: 5px
+.buy-add-list__el-img
+	bg-full()
+	size 60px
+	background-size: contain
+
+.buy-add-list__el-name
+	font-size: 12px
+
+.note
+	padding: 20px
+	br(5px)
+	margin: 20px 0 40px 0
+	line-height: 1.6
+.note--green
+	background: #dcf2e6
+
+.goods-product
+	f()
+	margin-bottom: 20px
+	background: white
+	border 1px solid $border-color
+	&:last-child
+		margin-bottom:0
+.goods-product__logo
+	padding: 20px
+	flex(mid)
+	width: 20%
+.goods-product__text
+	width: 60%
+	padding: 20px
+	line-height: 1.4
+	font-size: 12px
+.goods-product__val
+	padding: 20px
+	border-left 1px solid $border-color
+	flex(mid)
+	fl()
+.goods-product__cost
+	color $green
+	font-weight:700
+	margin-bottom: 10px
+	span
+		display: inline-block
+		font-size: 24px
+		margin: 0 5px
+		font-family:PF Beau Sans Pro
+
+.goods-product__get
+	@extend .btn--md
+	@extend .btn--green
+	width: 100%
+	padding: 10px
+	font-size: 12px
+
+.goods-product-wrap
+	margin-bottom: 40px
+
+//grid
+// Simple Flexbox Grid System
+// Built by @bramus – https://www.bram.us/
+
+// See https://www.bram.us/2016/10/07/simple-flexbox-grid-system/ for more details.
+
+$num-columns = 12
+$gutter = 1em
+$sizes = {
+  'xxs': 20, // 320px
+  'xs': 30, // 480px
+  'sm': 48, // 768px
+  'md': 64, // 1024px
+  'lg': 75, // 1200px
+  'xl': 90, // 1440px
+}
+
+.f-grid
+	width 100%
+	display flex
+	flex-direction row
+	flex-wrap wrap
+	justify-content flex-start
+	align-items stretch
+	box-sizing border-box
+	margin-bottom: 40px
+	.column
+		margin auto
+		overflow hidden
+		flex 0 0 100%
+		box-sizing border-box
+		margin 0 $gutter 0 0
+
+		&:last-child
+			margin-right 0
+
+		for $i in 0..$num-columns
+
+			$percentage = unit(($i / $num-columns) * 100, '%')
+			$adjustedgutter = $gutter * (1 - ($i / $num-columns))
+			$adjustedoffset = ($gutter * (1 - (($num-columns - $i) / $num-columns)))
+
+			&.column-{$i}
+				flex-basis "calc(%s - %s)" % ($percentage $adjustedgutter)
+
+			&.offset-{$i}
+				margin-left "calc(%s + %s)" % ($percentage $adjustedoffset)
+
+		for $name, $size in $sizes
+
+			// Make sure that the smallest size also applies to the range 0 - $size
+			// if ($name == keys($sizes)[0]) {
+			//  $size = 0
+			//}
+
+			@media (min-width: unit($size, 'em'))
+				for $i in 0..$num-columns
+
+					$percentage = unit(($i / $num-columns) * 100, '%')
+					$adjustedgutter = $gutter * (1 - ($i / $num-columns))
+					$adjustedoffset = ($gutter * (1 - (($num-columns - $i) / $num-columns)))
+
+					&.column-{$name}-{$i}
+						flex-basis "calc(%s - %s)" % ($percentage $adjustedgutter)
+					&.offset-{$name}-{$i}
+						margin-left "calc(%s + %s)" % ($percentage $adjustedoffset)
+
+		&.column-auto
+			flex-basis auto
+		&.column-stretch
+			flex 1 1 auto
+//grid === end
+
+.video
+	bg-full()
+	br(10px)
+	padding: 30% 10%
+	position: relative
+	overflow: hidden
+	&:hover
+		.video-filter
+			background: rgba(17, 17, 17, 0.4)
+	.icon
+		transition all .6s
+		position: absolute
+		size 80px
+		z-index 10
+		top calc(50% - 40px)
+		left calc(50% - 40px)
+
+.video-filter
+	transition all .6s
+	position: absolute
+	top 0
+	left 0
+	width: 100%
+	height: 100%
+	background: #11111130
+
+.goods-definition
+	margin-bottom: 40px
+
+.goods-table
+	margin-bottom: 40px
+	thead
+		background: $green
+		td
+			text-align: center
+			color white
+			font-size: 14px
+			border-color white
+	td
+		text-align: center
+		vertical-align: middle
+		font-size: 14px
+
+.works
+	display: grid
+	grid-gap 20px
+	grid-template-columns: repeat(auto-fit, minmax(10rem,1fr))
+
+.works__el
+	br(5px)
+	overflow: hidden
+.works__el-img
+	padding: 50% 10%
+
+.works__el-content
+	background: white
+	border 1px solid $border-color
+	padding: 20px
+	flex(mid)
+	fl()
+.works__el-title
+	font-weight: 700
+	color black
+
+.unit-el
+	br(5px)
+	f()
+	justify-content: space-between
+	margin-bottom: 30px
+.unit-el-view
+	width: 40%
+.unit-el-img
+	bg-full()
+	background-size contain
+	padding: 50% 10%
+	margin-bottom: 20px
+//.unit-img-list
+
+.unit-el-info
+	width: 57%
+.slider-wrap-img-list
+	padding: 0 10px
+
+.unit-title
+	font-size: 28px
+	font-weight: 700
+	margin-bottom: 20px
+	display: block
+	color black
+	cp()
+
+
+.unit-price
+	f()
+	font-size: 18px
+	align-items: center
+	margin-bottom: 30px
+.unit-price-text
+	margin-right: 10px
+.unit-price-val
+	font-size: 32px
+	font-weight: 700
+	color black
+	font-family: PF Beau Sans Pro
+
+
+.unit-type
+	flex(between)
+	margin-bottom: 15px
+
+.unit-img-list__el
+	bg-full()
+	background-repeat: no-repeat
+	background: white
+	size 100px
+	background-size: contain!important
+	padding: 5px
+	border 1px solid $border-color
+	cp()
+
+.unit-img-list__el-wrap
+	display: flex !important
+	align-content:center
+	justify-content: center
+
+.unit-img-list__el--active
+	border-color $green

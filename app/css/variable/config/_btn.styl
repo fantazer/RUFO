@@ -16,16 +16,14 @@ btnStyleLight(br-btn,color-btn)
 		border br-btn solid darken(color-btn,20)
 
 .btn
-	up()
 	tr(all)
-	br(15px)
+	br(5px)
 	display inline-block
 	background none
 	border 0px
 	color black
-	font-family "PF Beau Sans Pro"
-	font-weight: 900
 	text-align: center
+	font-weight: 700
 	&:hover
 		cursor pointer
 
@@ -38,7 +36,6 @@ btnStyleLight(br-btn,color-btn)
 
 .btn--md
 	@extend .btn
-	br(20px)
 	@extend .type--main
 	padding 10px 50px
 
@@ -62,6 +59,22 @@ btnStyleLight(br-btn,color-btn)
 	&:hover
 		color #000000
 		background: light-yellow
+	&:active
+		color #000000
+	input[type="submit"]
+		border 0
+	.nav-icon
+		fill white
+
+.btn--green
+	@extend .btn
+	background-color $green
+	color white!important
+	.nav-icon
+		fill white
+	&:hover
+		color #000000
+		background: light-green
 	&:active
 		color #000000
 	input[type="submit"]

@@ -5,19 +5,6 @@ include block_html/_include.pug
 .head
 	.head-top-wrap
 		.main-cont
-			.head-top
-				-
-					var items = [
-						'Главная','Оплата','Доставка','Гарантии','Сертификаты','Инструкции','Контакты','Распродажа'
-						];
-				each item in items
-					a(href="#").head-top__el #{item}
-
-	.main-cont
-		.header
-			a(href="/").header-logo
-				img(src="img/logo.png", alt="")
-			.header-location Москва
 			.header-contact-wrap
 				.header-contact
 					.header-contact__icon
@@ -27,6 +14,17 @@ include block_html/_include.pug
 					.header-contact__icon
 						+icon("mail","icon")
 					.header-contact__text Оставить сообщение
+
+
+	.main-cont
+		.header
+			a(href="/").header-logo
+				img(src="img/logo.png", alt="")
+			.header-location Москва
+			form(action="#").search
+				input(type="text" placeholder="Я ищу").input
+				.search-get
+					+icon("magnifying-glass","icon")
 			a(href="tel:8(495) 789-89-90").header-phone 8(495)789-89-90
 			.header-lk
 				.header-lk__icon
@@ -41,11 +39,13 @@ include block_html/_include.pug
 					.nav-cat__icon
 						+icon("menu","icon")
 					.nav-cat__text Каталог товаров
-				form(action="#").search
-					input(type="text" placeholder="Я ищу").input
-					.search-get
-						+icon("magnifying-glass","icon")
-
+				.menu
+					-
+						var items = [
+						'Оплата','Доставка','Гарантии','Сертификаты','Инструкции','Контакты','Распродажа'
+						];
+					each item in items
+						a(href="#").menu__el #{item}
 				.cart
 					.cart__icon
 						+icon("cart","icon")
@@ -54,17 +54,203 @@ include block_html/_include.pug
 						.cart__text Заказ на сумму
 						.cart__cost 8800 р
 
-.banner(style="background-image:url('https://www.indigorenderer.com/sites/default/files/images/Angel-v-1-2_TM-3_fog.jpg')")
+.banner(style="background-image:url('img/main-banner.jpg')")
 	.filter
 	.banner-content
 		.main-cont
 			.banner-wrap
 				.banner-text-slogan
-					.banner-text лучший выбор
+					.banner-text широкий выбор
 					.banner-title Кровельных систем
 					.banner-title-sub Наша продукция имеет множество форм,вариаций и цветовых решений. Каждая ваша идея будет воплощена в жизнь.
 				.banner-worker
 					img(src="img/man.png", alt="")
 
-.content
+.section
+	.main-cont
+		.tools
+			.tools__el
+				.tools__el-img
+					+icon("fence","icon")
+				.tools__el-text Расчет забора
+			.tools__el
+				.tools__el-img
+					+icon("roof","icon")
+				.tools__el-text Расчет кровли и софитов
+			.tools__el
+				.tools__el-img
+					+icon("pipeline","icon")
+				.tools__el-text Расчет водостоков
+			.tools__el
+				.tools__el-img
+					+icon("pantone","icon")
+				.tools__el-text Подбор цвета и материала
+		.section-title Лучшие предложения
+		.slider-wrap
+			.slider-control.slider-control--left
+				+icon("arrow-left","icon")
+			.slider-control.slider-control--right
+				+icon("arrow-right","icon")
+			.items-popular.slider-item
+				- for (var i=0;i<8;i++)
+					.item
+						.item-label.item-label--hit
+							.item-label__cont Хит
+						.item__img(style="background-image:url('img/item-1.jpg')")
+						.item-info
+							.item__title Металлочерепица модульная квинта
+							.item__descr Uno Grand Line c 3D резом 0,5 Satin RR 32 темно-коричневый
+							.item__cost 430 руб/м
+							.item__get В корзину
+
+.section.section--gray
+	.main-cont
+		.section-title Обзоры и статьи
+		.review
+			.review__el
+				.review__el-img(style="background-image:url('img/news-1.jpg')")
+				.review__el-content
+					.review__el-date 22.07
+					.review__el-title Как правильно выбрать профнастил
+					.review__el-text  Профнастил – это кровельный и облицовочный материал. Профнастил с маркировкой С предназначен для использования как облицовочный материал при строительстве ангаров, гаражей, заборов, в малоэтажном строительстве, промышленном строительстве, для внутренней отделки и пр.
+					.review__el-more Подробнее
+			.review__el.review__el--sm
+				.review__el-img(style="background-image:url('img/news-2.jpg')")
+				.review__el-content
+					.review__el-date 14.03
+					.review__el-title Стоит ли покупать металочерепицу
+					.review__el-text  При строительстве ангаров, гаражей, заборов, в малоэтажном строительстве, промышленном строительстве,
+					.review__el-more Подробнее
+			.review__el.review__el--sm.review__el--rotate
+				.review__el-content
+					.review__el-date 14.03
+					.review__el-title Стоит ли покупать металочерепицу
+					.review__el-text  При строительстве ангаров, гаражей, заборов, в малоэтажном строительстве, промышленном строительстве,
+					.review__el-more Подробнее
+				.review__el-img(style="background-image:url('img/news-3.jpg')")
+			.review__el.review__el--sm
+				.review__el-img(style="background-image:url('img/news-4.jpg')")
+				.review__el-content
+					.review__el-date 14.03
+					.review__el-title Стоит ли покупать металочерепицу
+					.review__el-text  При строительстве ангаров, гаражей, заборов, в малоэтажном строительстве, промышленном строительстве
+					.review__el-more Подробнее
+
+.section
+	.main-cont
+		.advant
+			.advant-el.advant-el--slogan
+				.advant-slogan Почему мы?
+			.advant-el.advant-el--old
+				.advant-el__title 8 лет на рынке
+				.advant-el__text
+					ul
+						li Более 10000 клиентов и с каждым днем все больше и больше довольных заказчиков, которые обращаются к нам снова и снова
+						li Продано более 1млн. м2 кровельных и фасадных материалов
+			.advant-el.advant-el--service
+				.advant-el__title Отличный сервис
+				.advant-el__text
+					ul
+						li Замеры и расчет в день обращения
+						li Возможность вернуть оставшиеся после монтажа материалы
+						li Срок поставки и изготовления от 1го дня
+						li Доставка продукции в удобное для вас время
+						li Комплектация «подключ»
+						li Квалифицированные монтажные бригады
+			.advant-el.advant-el--garant
+				.advant-el__title Гарантии
+				.advant-el__text Письменная гарантия на продукцию от завода-изготовителя о 50 лет.
+			.advant-el.advant-el--ekonom
+				.advant-el__title Экономичность
+				.advant-el__text Производство продукции по вашим размерам позволяет вам не переплачивать за лишний материал, а долговечность материалов дает возможность тратиться на стройку один раз в 50 лет.
+			.advant-el.advant-el--choice
+				.advant-el__title Большой выбор
+				.advant-el__text Наша продукция имеет множество форм, вариаций и цветовых решений. Каждая ваша идея будет воплощена в жизнь.
+			.advant-el.advant-el--person
+				.advant-el__title Квалифицированный персонал
+				.advant-el__text Мы уделяем большое внимание профессионализму сотрудников. обучение проходит регулярно на протяжении года.
+
+.section
+	.main-cont
+		.section-title Новые поступления
+		.items
+			.item
+				.item-label.item-label--new
+					.item-label__cont New
+				.item__img(style="background-image:url('img/item-2.png')")
+				.item-info
+					.item__title Керамическая черепица
+					.item__descr Uno Grand Line c 3D резом 0,5 Satin RR 32 темно-коричневый
+					.item__cost 1230 руб/м
+					.item__get В корзину
+			.item
+				.item-label.item-label--new
+					.item-label__cont New
+				.item__img(style="background-image:url('img/item-3.jpeg')")
+				.item-info
+					.item__title Стыки для плитки
+					.item__descr Uno Grand Line c 3D резом 0,5 Satin RR 32 темно-коричневый
+					.item__cost 420 руб/м
+					.item__get В корзину
+			.item
+				.item-label.item-label--new
+					.item-label__cont New
+				.item__img(style="background-image:url('img/item-4.png')")
+				.item-info
+					.item__title Покрытие для крыши
+					.item__descr Uno Grand Line c 3D резом 0,5 Satin RR 32 темно-коричневый
+					.item__cost 510 руб/м
+					.item__get В корзину
+			.item
+				.item-label.item-label--new
+					.item-label__cont New
+				.item__img(style="background-image:url('img/item-5.png')")
+				.item-info
+					.item__title Металический сайдинг
+					.item__descr Uno Grand Line c 3D резом 0,5 Satin RR 32 темно-коричневый
+					.item__cost 210 руб/м
+					.item__get В корзину
+.footer
+	.main-cont
+		.footer-wrap
+			.footer-col
+				.footer__title Кровля
+				.footer__list
+					.footer__list-el Металлоцерепица
+					.footer__list-el Профнастил
+					.footer__list-el Фальц
+					.footer__list-el Гибкая черепица
+			.footer-col
+				.footer__title Ограждение
+				.footer__list
+					.footer__list-el Забор из профнастила
+					.footer__list-el Профнастил для заборов
+					.footer__list-el Комплектующие
+					.footer__list-el Сварные ограждения
+					.footer__list-el Модульные ограждения
+					.footer__list-el Штакетник
+			.footer-col
+				.footer__title Фасад
+				.footer__list
+					.footer__list-el Стальной сайдинг
+					.footer__list-el Виниловый сайдинг
+					.footer__list-el Фасадные кассеты
+			.footer-col
+				.footer__title Полезное
+				.footer__list
+					.footer__list-el Вопрос-ответ
+					.footer__list-el Инструкции
+					.footer__list-el Статьи
+					.footer__list-el Сертификаты
+					.footer__list-el Карта цветов
+					.footer__list-el Материалы и покрытия
+					.footer__list-el Советы по выбору
+					.footer__list-el Расчёт количества материалов
+					.footer__list-el Покрытия металлочерепицы
+			.footer-col
+				.footer-logo
+					img(src="img/logo.png", alt="")
+				.footer-phone 8(495)789-89-90
+				.footer-callback Заказать звонок
+
 include ./block_html/_script.pug

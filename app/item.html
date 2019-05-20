@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<!--create by ANATOLY KUZNETSOV-->
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="format-detection" content="telephone=no" />
+    <!--colors-tabs-->
+    <meta name="theme-color" content="#000" />
+    <meta name="msapplication-navbutton-color" content="#000" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="#000" />
+    <!--SEO-->
+    <title>Document</title>
+    <meta name="description" itemprop="description" content="" />
+    <!--build:css css/vendor.css-->
+    <link rel="stylesheet" href="bower/normalize.css/normalize.css" />
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+    <link rel="stylesheet" href="bower/slick-carousel/slick/slick.css" />
+    <link rel="stylesheet" href="bower/slick-carousel/slick/slick-theme.css" />
+    <link rel="stylesheet" href="bower/jquery-nice-select/css/nice-select.css" />
+    <link rel="stylesheet" href="bower/perfect-scrollbar/css/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="bower/ion.rangeSlider/css/ion.rangeSlider.css" />
+    <link rel="stylesheet" href="bower/ion.rangeSlider/css/ion.rangeSlider.skinNice.css" />
+    <link rel="stylesheet" href="bower/fancybox/dist/jquery.fancybox.css" />
+    <!--endbuild-->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style-edit.css" />
+</head>
+
+<body>
+    <div class="main-cont">
+        <div class="bread">
+            <a class="bread__el" href="#">Главная</a>
+            <a class="bread__el" href="#">Интернет магазин</a>
+            <a class="bread__el" href="#">Кровля</a>
+            <a class="bread__el" href="#">Металочерепица</a>
+            <a class="bread__el" href="#">Classic</a>
+        </div>
+    </div>
+    <div class="main-cont">
+        <div class="unit">
+            <div class="unit-el">
+                <div class="unit-el-view">
+                    <div class="unit-el-img" style="background-image:url('img/item-1.jpg')"></div>
+                    <div class="slider-wrap slider-wrap-img-list">
+                        <div class="slider-control slider-control--green slider-control--left">
+                            <svg class="icon">
+                                <use xlink:href="#arrow-left"></use>
+                            </svg>
+                        </div>
+                        <div class="slider-control slider-control--green slider-control--right">
+                            <svg class="icon">
+                                <use xlink:href="#arrow-right"></use>
+                            </svg>
+                        </div>
+                        <div class="unit-img-list slider-item">
+                            <div class="unit-img-list__el-wrap">
+                                <div class="unit-img-list__el unit-img-list__el--active" style="background-image:url('img/item-1.jpg')"></div>
+                            </div>
+                            <div class="unit-img-list__el-wrap">
+                                <div class="unit-img-list__el" style="background-image:url('img/item-5.png')"></div>
+                            </div>
+                            <div class="unit-img-list__el-wrap">
+                                <div class="unit-img-list__el" style="background-image:url('img/item-3.jpeg')"></div>
+                            </div>
+                            <div class="unit-img-list__el-wrap">
+                                <div class="unit-img-list__el" style="background-image:url('img/item-5.png')"></div>
+                            </div>
+                            <div class="unit-img-list__el-wrap">
+                                <div class="unit-img-list__el unit-img-list__el--active" style="background-image:url('img/item-1.jpg')"></div>
+                            </div>
+                            <div class="unit-img-list__el-wrap">
+                                <div class="unit-img-list__el" style="background-image:url('img/item-5.png')"></div>
+                            </div>
+                            <div class="unit-img-list__el-wrap">
+                                <div class="unit-img-list__el" style="background-image:url('img/item-3.jpeg')"></div>
+                            </div>
+                            <div class="unit-img-list__el-wrap">
+                                <div class="unit-img-list__el" style="background-image:url('img/item-5.png')"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="unit-el-info">
+                    <div class="unit-title">Металлочерепица классик GL 0,5 Atlas</div>
+                    <div class="unit-price">
+                        <div class="unit-price-text">Цена:</div>
+                        <div class="unit-price-val">от 359.00 р/м2</div>
+                    </div>
+                    <div class="goods-size">
+                        <div class="goods-size__el">
+                            <div class="goods-size__el-val">
+                                <input class="input" type="text" placeholder="Длинна,мм" />
+                            </div>
+                        </div>
+                        <div class="goods-size__el">
+                            <div class="goods-size__el-val">
+                                <input class="input" type="text" placeholder="Кол-во шт" />
+                            </div>
+                        </div>
+                        <div class="goods-size__el">
+                            <div class="goods-size__el-text">Итого</div>
+                            <div class="goods-size__el-val">
+                                <div class="goods-size__el-cost">0 р</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="goods-gabarites-add" href="#">+ добавить лист другой длинны</a>
+                    <div class="goods-meters">ООбщая сумма заказа:
+                        <span>5678 Р</span>
+                    </div>
+                    <div class="goods-meters">Общий метраж заказа:
+                        <span>5м
+                            <sup>2</sup>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--build:js js/combined.js-->
+    <script src="bower/jquery/dist/jquery.js"></script>
+    <script src="bower/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+    <script src="bower/slick-carousel/slick/slick.js"></script>
+    <script src="bower/perfect-scrollbar/js/perfect-scrollbar.jquery.js"></script>
+    <script src="bower/ion.rangeSlider/js/ion.rangeSlider.js"></script>
+    <script src="bower/fancybox/dist/jquery.fancybox.js"></script>
+    <script src="js/add-on.js"></script>
+    <!-- endbuild-->
+    <script src="js/script.js"></script>
+    <script src="js/script-edit.js"></script>
+</body>
+
+</html>

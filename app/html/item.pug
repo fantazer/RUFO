@@ -1,0 +1,54 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.main-cont
+	.bread
+		-
+			var items = ['Главная','Интернет магазин','Кровля','Металочерепица','Classic'];
+		each item in items
+			a(href="#").bread__el #{item}
+
+.main-cont
+	.unit
+
+		.unit-el
+			.unit-el-view
+				.unit-el-img(style="background-image:url('img/item-1.jpg')")
+				.slider-wrap.slider-wrap-img-list
+					.slider-control.slider-control--green.slider-control--left
+						+icon("arrow-left","icon")
+					.slider-control.slider-control--green.slider-control--right
+						+icon("arrow-right","icon")
+					.unit-img-list.slider-item
+						- for (var i=0;i<2;i++)
+							.unit-img-list__el-wrap
+								.unit-img-list__el.unit-img-list__el--active(style="background-image:url('img/item-1.jpg')")
+							.unit-img-list__el-wrap
+								.unit-img-list__el(style="background-image:url('img/item-5.png')")
+							.unit-img-list__el-wrap
+								.unit-img-list__el(style="background-image:url('img/item-3.jpeg')")
+							.unit-img-list__el-wrap
+								.unit-img-list__el(style="background-image:url('img/item-5.png')")
+			.unit-el-info
+				.unit-title Металлочерепица классик GL 0,5 Atlas
+				.unit-price
+					.unit-price-text Цена:
+					.unit-price-val от 359.00 р/м2
+				.goods-size
+					.goods-size__el
+						.goods-size__el-val
+							input(type="text" placeholder="Длинна,мм").input
+					.goods-size__el
+						.goods-size__el-val
+							input(type="text" placeholder="Кол-во шт").input
+					.goods-size__el
+						.goods-size__el-text Итого
+						.goods-size__el-val
+							.goods-size__el-cost 0 р
+				a(href="#").goods-gabarites-add + добавить лист другой длинны
+
+				.goods-meters  ООбщая сумма заказа:
+					span 5678 Р
+				.goods-meters  Общий метраж заказа:
+					span 5м<sup>2</sup>
+include ./block_html/_script.pug

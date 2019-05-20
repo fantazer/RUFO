@@ -1,0 +1,320 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.main-cont
+	.goods-banner
+		.goods-banner__el(style="background-image:url('img/news-4.jpg')")
+.main-cont
+	.bread
+		-
+			var items = ['Главная','Интернет магазин','Кровля','Металочерепица','Classic'];
+		each item in items
+			a(href="#").bread__el #{item}
+.main-cont
+	.goods
+		.toolbar
+			// NOTE!! Если нужно сделать списку скрол добавь ..toolbar-box-cont + .scroll
+			//Цена
+			.toolbar-box.toolbar-box--open
+				.toolbar-box-head
+					.toolbar-head__title Цена
+					.toolbar-head__icon
+						+icon("arrow-up-fat","icon")
+				.toolbar-box-cont(style="display:block")
+					.range-wrap
+						input(type="range" class="range" data-min="0" data-max="300")
+			//Список
+			.toolbar-box.toolbar-box--open
+				.toolbar-box-head
+					.toolbar-head__title Металлочерепица
+					.toolbar-head__icon
+						+icon("arrow-up-fat","icon")
+				.toolbar-box-cont(style="display:block")
+					.goods-list
+						a(href="#").goods-list__el Металлочерепица RuuKI
+						a(href="#").goods-list__el Металлочерепица Grand Line
+						a(href="#").goods-list__el Металлочерепица Метал Профиль
+						a(href="#").goods-list__el Металлочерепица Ruu
+
+			//Выбрать профиль
+			.toolbar-box
+				.toolbar-box-head
+					.toolbar-head__title Выбрать профиль
+					.toolbar-head__icon
+						+icon("arrow-up-fat","icon")
+				.toolbar-box-cont
+					.goods-profile
+						- for (var i=0;i<5;i++)
+							.goods-profile__el
+								.goods-profile__el-title Монтерей
+								.goods-profile__el-wrap
+									.goods-profile__el-img(style="background-image:url('img/news-2.jpg')")
+									+checkbox()
+									.goods-profile__el-style
+										img(src="img/ruf-style.jpg", alt="")
+			//Основа покрытия
+			.toolbar-box
+				.toolbar-box-head
+					.toolbar-head__title Основа покрытия
+					.toolbar-head__icon
+						+icon("arrow-up-fat","icon")
+				.toolbar-box-cont
+					.goods-list
+						a(href="#").goods-list__el Основа покрытия 1
+						a(href="#").goods-list__el Основа покрытия 2
+						a(href="#").goods-list__el Основа покрытия 3
+						a(href="#").goods-list__el Основа покрытия 4
+			//Покрытия
+			.toolbar-box.toolbar-box--open
+				.toolbar-box-head
+					.toolbar-head__title Покрытия
+					.toolbar-head__icon
+						+icon("arrow-up-fat","icon")
+				.toolbar-box-cont.scroll(style="display:block")
+					.goods-list
+						- for (var i=0;i<5;i++)
+							.goods-list__el
+								+checkbox('Purai')
+							.goods-list__el
+								+checkbox('Purai Matt')
+							.goods-list__el
+								+checkbox('Стальной кашемир')
+			//Цвета
+			.toolbar-box.toolbar-box--open
+				.toolbar-box-head
+					.toolbar-head__title цвета
+					.toolbar-head__icon
+						+icon("arrow-up-fat","icon")
+				.toolbar-box-cont(style="display:block")
+					.card-color__list
+						.filter__color
+							-  var items = ['#ed4e50','#b85ec9','#4c51c9','rgb(125, 204, 237)','#74d99e','#accb4d','#e8e85a','#f49e41','#b65737','#c1c1c1','#000000'];
+							each item in items
+								.filter__color-el(style="background-color:" + item )
+									.filter__color-ico
+										+icon("checked","icon")
+							.filter__color-el.filter__color-el--white
+								.filter__color-ico
+									+icon("checked","icon")
+
+
+
+
+
+			//Cертификаты
+			.toolbar-box.toolbar-box--open
+				.toolbar-box-head
+					.toolbar-head__title Сертификаты и документы
+					.toolbar-head__icon
+						+icon("arrow-up-fat","icon")
+				.toolbar-box-cont.scroll(style="display:block")
+					- for (var i=0;i<6;i++)
+						a(href="#").toolbar-doc
+							.toolbar-doc__icon
+								+icon("doc","icon")
+							.toolbar-doc__text Пример чертежей по результатам замера кровли
+			//Статьи
+			.toolbar-box.toolbar-box--open
+				.toolbar-box-head
+					.toolbar-head__title Статьи о металлочерепице
+					.toolbar-head__icon
+						+icon("arrow-up-fat","icon")
+				.toolbar-box-cont(style="display:block")
+					.goods-list
+						a(href="#").goods-list__el Маталлочерепица- цена и качество
+						a(href="#").goods-list__el Обзор металочерепицы
+						a(href="#").goods-list__el Металлочерепица, или фальцевая кровля
+						a(href="#").goods-list__el Гарантийные обязательства на изделие компании МеталоПрофиль
+			//Статьи
+			.toolbar-box.toolbar-box--open
+				.toolbar-box-head
+					.toolbar-head__title Меню
+					.toolbar-head__icon
+						+icon("arrow-up-fat","icon")
+				.toolbar-box-cont(style="display:block")
+					.goods-list
+						a(href="#").goods-list__el Акции и спецпредложения
+						a(href="#").goods-list__el Карта цветов
+						a(href="#").goods-list__el Доставка и оплата
+						a(href="#").goods-list__el Инструкция по монтажу
+						a(href="#").goods-list__el Расчет фасада и кровли
+
+		.goods-cont
+			//Часто ищут
+			.goods-serch
+				.goods-serch__title Часто ищут:
+				- for (var i=0;i<9;i++)
+					a(href="#").goods-serch__list-el матовая металлочерепица
+			//Сортировка
+			.sort
+				.sort-el.sort-el--type
+					.sort-el__name Сортировать по:
+					.sort-el__list
+						select.select-beauty
+							option Торговой марке
+							option Цене
+							option Профилю
+				.sort-el
+					.sort-el__name Показать:
+					.sort-el__list
+						select.select-beauty
+							option 10
+							option 20
+							option 30
+				.sort-val Сравнение:
+					span 3
+			- for (var k=0;k<4;k++)
+				.goods-el
+					.goods-el-view
+						.goods-el-img(style="background-image:url('img/item-1.jpg')")
+						.slider-wrap.slider-wrap-img-list
+							.slider-control.slider-control--green.slider-control--left
+								+icon("arrow-left","icon")
+							.slider-control.slider-control--green.slider-control--right
+								+icon("arrow-right","icon")
+							.goods-img-list.slider-item
+								- for (var i=0;i<2;i++)
+									.goods-img-list__el.goods-img-list__el--active(style="background-image:url('img/item-1.jpg')")
+									.goods-img-list__el(style="background-image:url('img/item-2.png')")
+									.goods-img-list__el(style="background-image:url('img/item-3.jpeg')")
+					.goods-el-info
+						.goods-title Металлочерепица «Монтеррей»
+						.goods-price
+							.goods-price-text Цена:
+							.goods-price-val от 359.00 р/м2
+						.goods-type
+							.goods-type__el Вид профиля:
+								span.goods-type__el-val Лист
+							.goods-type__el
+								select.select-beauty
+									option Полиэстр
+									option Пластик
+									option Дерево
+							.goods-type__el
+								select.select-beauty
+									option RR33 (черный)
+									option RR27 (красный)
+									option RR21 (Синий)
+						.goods-descr
+							.goods-gabarites
+								.goods-size
+									.goods-size__el
+										.goods-size__el-val
+											input(type="text" placeholder="Длинна,мм").input
+									.goods-size__el
+										.goods-size__el-val
+											input(type="text" placeholder="Кол-во шт").input
+									.goods-size__el
+										.goods-size__el-text Итого
+										.goods-size__el-val
+											.goods-size__el-cost 0 р
+								a(href="#").goods-gabarites-add + добавить лист другой длинны
+								.goods-meters  Общий метраж:
+									span 0 м<sup>2</sup>
+								.goods-get Добавить в корзину
+								a(href="#").goods-compare Добавить в сравнение
+								.goods-text Металлочерепица Grand Line Kvinta плюс выгодно отличается оригинальным элегантным профилем, а канавка на гребне волны повышает прочность кровли.
+							.goods-consist
+								.goods-scale
+									- for (var i=0;i<8;i++)
+										.goods-scale__el
+											.goods-scale__el-text Ширина общая
+											.goods-scale__el-val 1183 мм
+								a(href="#").goods-scale-more Подробнее
+			.pagination
+				.pagination__el.pagination__el--active 1
+				.pagination__el 2
+				.pagination__el 3
+				.pagination__el.pagination__el--dot ...
+				.pagination__el 4
+				.pagination__el 5
+			.buy-add
+				.buy-add-title С этим товаром покупают:
+
+				- for (var i=0;i<9;i++)
+				.slider-wrap
+					.slider-control.slider-control--green.slider-control--left
+						+icon("arrow-left","icon")
+					.slider-control.slider-control--green.slider-control--right
+						+icon("arrow-right","icon")
+					.slider-item.buy-add-list
+						- for (var i=0;i<12;i++)
+							.buy-add-list__el
+								.buy-add-list__el-wrap
+									.buy-add-list__el-img-cont
+										.buy-add-list__el-img(style="background-image:url('img/water.png')")
+									.buy-add-list__el-name Водосток
+			.note.note--green Купить кровлю высшего качества в Новосибирске и области вы сможете в «РУФФО». Также предлагаем комплектующие, утеплители, пароизоляционную пленку и гидроизоляционные мембраны по самым выгодным ценам.
+			h2 Основные производители Металлочерепицы
+			.goods-product-wrap
+				- for (var i=0;i<3;i++)
+					.goods-product
+						.goods-product__logo
+							img(src="img/product.jpg", alt="")
+						.goods-product__text Поднимать листы на поддоне можно при помощи подъемной техники, при этом нужно устроить временные стеллажи для хранения листов. Также поднимать листы можно при помощи лаг (направляющих из брусков). По лагам поднимать следует по одному листу, обвязывая лист веревкой. Запрещено поднимать листы методом типа «тяни-толкай», то есть затягиванием листа на кровлю и подталкиванием снизу—такой метод может привести к нарушению геометрии листа. Мы не рекомендуем поднимать листы на кровлю в ветренную погоду, т. к. высока вероятность повреждения листов.
+						.goods-product__val
+							.goods-product__cost от <span>2345</span> р/м2
+							a(href="#").goods-product__get Каталог продукции
+			//-
+				Простая сетка https://www.bram.us/2016/10/07/simple-flexbox-grid-system/
+			//
+			.f-grid
+				.column.column-md-6
+					h3 Как производится металлочерепица
+					a(href="https://youtu.be/BJgoBi6AEUI").fancybox.video-link
+						.video(style="background-image:url('img/news-1.jpg')")
+							.video-filter
+							+icon("play--color","icon")
+				.column.column-md-6
+					h3 Как производится металлочерепица
+					a(href="https://youtu.be/BJgoBi6AEUI").fancybox.video-link
+						.video(style="background-image:url('img/news-3.jpg')")
+							.video-filter
+							+icon("play--color","icon")
+			.goods-definition.content
+				h2 Цены на металлочерепицу в Москве
+				p толщины стального листа. Оптимальным вариантом для устройства большинства крыш будет металлочерепица в 0,5 мм. В устройстве кровли с крутыми скатами допустимо использование материала 0,35−0,45 мм. Для пологой крыши рекомендуется купить покрытие толщиной 0,55 мм;
+				p толщины цинкового слоя. В стандартных листах она составляет 120−140 г/м2. Этого достаточно,		чтобы обеспечить необходимый уровень антикоррозионной защиты, сохранив цены на металлочерепицу на приемлемом уровне. Для строительства зданий в промышленной зоне или в регионе со сложным климатом рекомендуется купить листы с более толстым цинковым покрытием;
+				ul
+					li Список 1
+					li Список 2
+					li Список 3
+
+			.goods-table
+				h2 Сравнительные характеристики
+				table.table
+					thead
+						tr
+							td Металлочерепица
+							td Полная ширина, мм
+							td Полезная ширина, мм
+							td Высота волны/ступеньки, мм
+							td Длина волны, мм
+							td Толщина металла, мм
+							td Ценовой сегмент
+					tbody
+						- for (var i=0;i<6;i++)
+							tr
+								td Монтеррей
+								td 1180
+								td 1100
+								td 24/14
+								td 350
+								td 0,5-5,7
+								td От эконом до премиум
+
+			h2 Примеры работ
+			.works
+				- for (var i=0;i<3;i++)
+					.works__el
+						.works__el-img(style="background-image:url('img/news-1.jpg')")
+						.works__el-content
+							.works__el-name Загородный дом
+							.works__el-title с металлочерепицей «Венеция»
+
+
+
+
+
+
+include ./block_html/_script.pug
