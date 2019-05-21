@@ -16,7 +16,7 @@ body
 	color $main-text-color
 	line-height 1.2
 	letter-spacing 0.01em
-	background: #fbfbfb
+	background: rgba(251, 251, 251, 0.2)
 .main-cont
 	center(1200px,10px)
 
@@ -161,7 +161,22 @@ body
 .content
 	p
 		line-height: 1.4
-
+	ul
+		li
+			line-height: 1.4
+			margin-bottom: 20px
+			list-style: none
+			position: relative
+			&:before
+				content ''
+				position: absolute
+				left -20px
+				size 6px
+				background: $green
+				round()
+				top 8px
+	b,strong
+		color black
 .filter
 	position: absolute
 	width: 100%
@@ -261,8 +276,10 @@ body
 	background: $red
 
 .item-label--new
-	background: $green
+	background: $red
 .item__img
+	+below(640px)
+		padding: 30% 10%
 	padding: 40% 10%
 	bg-full()
 	background-size: contain
@@ -289,7 +306,7 @@ body
 	margin-bottom: 20px
 .item__get
 	@extend .btn--md
-	@extend .btn--yellow
+	@extend .btn--green
 
 .slick-slide
 	margin: 0 5px
@@ -307,7 +324,7 @@ body
 	z-index 10
 	cp()
 	br(2px)
-	margin-top: -12px
+	transform translateY(-50%)
 	&:hover
 		background: $gray
 	.icon
@@ -573,11 +590,17 @@ select.select-beauty
 .goods-banner__el
 	bg-full()
 	padding: 5% 10%
+	background-color: gray
 .goods
+	+below(960px)
+		fw()
 	f()
 	justify-content: space-between
 	margin-bottom: 40px
 .toolbar
+	+below(960px)
+		width: 100%
+		display: none
 	width: 285px
 .toolbar-box
 	border 1px solid $border-color
@@ -649,8 +672,12 @@ select.select-beauty
 //.icon-check
 //.sytle-input-text
 .goods-cont
+	+below(960px)
+		width: 100%
 	width calc(100% - 315px)
 .goods-serch
+	+below(1024px)
+		display: none
 	f()
 	fw()
 	margin-bottom: 30px
@@ -700,9 +727,8 @@ select.select-beauty
 	+below(768px)
 		f()
 		fw()
-	justify-content center
 	display grid
-	grid-template-columns repeat(auto-fit, minmax(36px,1fr) )
+	grid-template-columns repeat(auto-fill, minmax(36px,1fr) )
 	grid-gap 10px
 .filter__color-el--active
 	.filter__color-ico
@@ -755,36 +781,56 @@ select.select-beauty
 .toolbar-doc__icon
 	.icon
 		tr(all)
-		size 40px
+		size 30px
+		opacity .6
 	margin-right: 20px
 .toolbar-doc__text
 	tr(all)
 	width calc(100% - 60px)
 	color #4e4e4e
 .sort
+	+below(640px)
+		fw()
+		display: none
 	f()
 	align-items: center
 	margin-bottom: 30px
 .sort-el
+	+below(640px)
+		width: 100%
+		justify-content: space-between
+		margin-bottom: 10px
 	f()
 	justify-content: center
 	align-items: center
 	margin-right: 30px
 .sort-el__name
+	+below(640px)
+		width: 40%
 	margin-right: 10px
 	font-weight: 700
-//.sort-el__list
-//.select-beauty
+.sort-el__list
+	+below(640px)
+		width: 60%
+		.select-beauty
+			width: 100%
 .sort-val
+	+below(640px)
+		margin-left initial
 	margin-left: auto
 	span
 		font-weight: 700
 
 .sort-el--type
 	.nice-select
+		+below(640px)
+			width: 100%
 		width: 150px
 
 .goods-el
+	+below(640px)
+		fw()
+		padding: 10px
 	br(5px)
 	f()
 	justify-content: space-between
@@ -793,8 +839,15 @@ select.select-beauty
 	background: white
 	padding: 20px
 .goods-el-view
+	+below(1024px)
+		min-width:250px
+	+below(640px)
+		width: 100%
+		margin-bottom: 20px
 	width: 30%
 .goods-el-img
+	+below(640px)
+		padding: 35% 10%
 	bg-full()
 	background-size contain
 	padding: 50% 10%
@@ -812,18 +865,26 @@ select.select-beauty
 	&:hover
 		border-color $green
 .goods-el-info
+	+below(1024px)
+		width calc(100% - 270px)
+	+below(640px)
+		width: 100%
 	width: 67%
 .slider-wrap-img-list
 	padding: 0 10px
 .goods-img-list__el--active
 	border-color $green
 .goods-title
+	+below(768px)
+		font-size: 24px
 	font-size: 28px
 	font-weight: 700
 	margin-bottom: 15px
 	display: block
 	color black
 .goods-price
+	+below(1024px)
+		margin-bottom: 20px
 	f()
 	font-size: 18px
 	align-items: center
@@ -836,9 +897,19 @@ select.select-beauty
 	color $red
 
 .goods-type
+	+below(1024px)
+		fw()
 	flex(between)
 	margin-bottom: 15px
 .goods-type__el
+	+below(1024px)
+		&:first-child
+			width: 100%
+			margin-bottom: 20px
+		width: 45%
+	+below(640px)
+		width: 100%
+		margin-bottom: 10px
 	width: 30%
 	.select-beauty
 		width: 100%
@@ -851,6 +922,8 @@ select.select-beauty
 	justify-content: space-between
 
 .goods-gabarites
+	+below(1024px)
+		width: 100%
 	width: 65%
 .goods-size
 	flex(between)
@@ -878,6 +951,10 @@ select.select-beauty
 	color gray
 	margin: 10px 0
 	display: block
+	margin-bottom: 30px
+	tr(all)
+	&:hover
+		color black
 .goods-meters
 	span
 		font-weight: 700
@@ -904,6 +981,8 @@ select.select-beauty
 	color gray
 	font-size: 10px
 .goods-consist
+	+below(1024px)
+		display: none
 	width: 30%
 //.goods-scale
 .goods-scale__el
@@ -987,6 +1066,8 @@ select.select-beauty
 	background: #dcf2e6
 
 .goods-product
+	+below(480px)
+		fl()
 	f()
 	margin-bottom: 20px
 	background: white
@@ -994,15 +1075,25 @@ select.select-beauty
 	&:last-child
 		margin-bottom:0
 .goods-product__logo
+	+below(640px)
+		width: 100%
 	padding: 20px
 	flex(mid)
 	width: 20%
 .goods-product__text
+	+below(640px)
+		width: 100%
 	width: 60%
 	padding: 20px
 	line-height: 1.4
 	font-size: 12px
 .goods-product__val
+	+below(1024px)
+		width: 30%
+	+below(640px)
+		width: 100%
+		border-left 0
+		border-top 1px solid $border-color
 	padding: 20px
 	border-left 1px solid $border-color
 	flex(mid)
@@ -1026,79 +1117,6 @@ select.select-beauty
 
 .goods-product-wrap
 	margin-bottom: 40px
-
-//grid
-// Simple Flexbox Grid System
-// Built by @bramus – https://www.bram.us/
-
-// See https://www.bram.us/2016/10/07/simple-flexbox-grid-system/ for more details.
-
-$num-columns = 12
-$gutter = 1em
-$sizes = {
-  'xxs': 20, // 320px
-  'xs': 30, // 480px
-  'sm': 48, // 768px
-  'md': 64, // 1024px
-  'lg': 75, // 1200px
-  'xl': 90, // 1440px
-}
-
-.f-grid
-	width 100%
-	display flex
-	flex-direction row
-	flex-wrap wrap
-	justify-content flex-start
-	align-items stretch
-	box-sizing border-box
-	margin-bottom: 40px
-	.column
-		margin auto
-		overflow hidden
-		flex 0 0 100%
-		box-sizing border-box
-		margin 0 $gutter 0 0
-
-		&:last-child
-			margin-right 0
-
-		for $i in 0..$num-columns
-
-			$percentage = unit(($i / $num-columns) * 100, '%')
-			$adjustedgutter = $gutter * (1 - ($i / $num-columns))
-			$adjustedoffset = ($gutter * (1 - (($num-columns - $i) / $num-columns)))
-
-			&.column-{$i}
-				flex-basis "calc(%s - %s)" % ($percentage $adjustedgutter)
-
-			&.offset-{$i}
-				margin-left "calc(%s + %s)" % ($percentage $adjustedoffset)
-
-		for $name, $size in $sizes
-
-			// Make sure that the smallest size also applies to the range 0 - $size
-			// if ($name == keys($sizes)[0]) {
-			//  $size = 0
-			//}
-
-			@media (min-width: unit($size, 'em'))
-				for $i in 0..$num-columns
-
-					$percentage = unit(($i / $num-columns) * 100, '%')
-					$adjustedgutter = $gutter * (1 - ($i / $num-columns))
-					$adjustedoffset = ($gutter * (1 - (($num-columns - $i) / $num-columns)))
-
-					&.column-{$name}-{$i}
-						flex-basis "calc(%s - %s)" % ($percentage $adjustedgutter)
-					&.offset-{$name}-{$i}
-						margin-left "calc(%s + %s)" % ($percentage $adjustedoffset)
-
-		&.column-auto
-			flex-basis auto
-		&.column-stretch
-			flex 1 1 auto
-//grid === end
 
 .video
 	bg-full()
@@ -1146,13 +1164,15 @@ $sizes = {
 .works
 	display: grid
 	grid-gap 20px
-	grid-template-columns: repeat(auto-fit, minmax(10rem,1fr))
+	grid-template-columns: repeat(auto-fit, minmax(12rem,1fr))
+	margin-bottom: 40px
 
 .works__el
 	br(5px)
 	overflow: hidden
 .works__el-img
-	padding: 50% 10%
+	bg-full()
+	padding: 40% 10%
 
 .works__el-content
 	background: white
@@ -1163,13 +1183,18 @@ $sizes = {
 .works__el-title
 	font-weight: 700
 	color black
+	text-align: center
 
 .unit-el
+	+below(740px)
+		fw()
 	br(5px)
 	f()
 	justify-content: space-between
 	margin-bottom: 30px
 .unit-el-view
+	+below(740px)
+		width: 100%
 	width: 40%
 .unit-el-img
 	bg-full()
@@ -1179,6 +1204,9 @@ $sizes = {
 //.unit-img-list
 
 .unit-el-info
+	+below(740px)
+		width: 100%
+		margin-top: 20px
 	width: 57%
 .slider-wrap-img-list
 	padding: 0 10px
@@ -1193,13 +1221,18 @@ $sizes = {
 
 
 .unit-price
+	+below(640px)
+		margin-bottom: 15px
 	f()
 	font-size: 18px
 	align-items: center
-	margin-bottom: 30px
+	margin-bottom: 50px
 .unit-price-text
 	margin-right: 10px
+	font-size: 15px
 .unit-price-val
+	+below(640px)
+		font-size: 18px
 	font-size: 32px
 	font-weight: 700
 	color black
@@ -1211,11 +1244,15 @@ $sizes = {
 	margin-bottom: 15px
 
 .unit-img-list__el
-	bg-full()
-	background-repeat: no-repeat
+	+below(640px)
+		width: 100%
+		height: auto
+		padding: 50% 10%
+	background-position: center center!important
+	background-repeat: no-repeat!important
+	background-size: contain!important
 	background: white
 	size 100px
-	background-size: contain!important
 	padding: 5px
 	border 1px solid $border-color
 	cp()
@@ -1227,3 +1264,495 @@ $sizes = {
 
 .unit-img-list__el--active
 	border-color $green
+
+.rating
+	margin-bottom: 15px
+	f()
+	align-items: center
+.rating-text
+	margin-right: 20px
+.rating-row
+	f()
+	align-items: center
+.rating-row__item
+	margin-right: 4px
+	&:last-child
+		margin-right: 0
+	.icon
+		size 14px
+		fill #efce4a
+
+.rating-row__item--empty
+	.icon
+		fill #dfdfdf
+
+.unit-code
+	color gray
+	margin-bottom: 20px
+
+.unit-color
+	+below(640px)
+		fw()
+	f()
+	align-items: center
+	margin-bottom: 20px
+	max-width 500px
+
+.card-color__list
+	width: 100%
+
+.unit-color__text
+	+below(640px)
+		font-size: 14px
+		margin-bottom: 10px
+	margin-right: 10px
+
+.unit-kind
+	f()
+	align-items: center
+	margin-bottom: 20px
+
+.unit-kind__text
+	margin-right: 10px
+.unit-kind__val
+	font-weight: 700
+	color black
+
+.book-row
+	margin-bottom: 10px
+.book-row__title
+	+below(640px)
+		white-space:initial
+		width: 40%
+		font-size: 10px
+	display table-cell
+	 white-space nowrap
+.book-row__dot
+	display table-cell
+	border-bottom 1px dashed #edecec
+	width 100%
+.book-row__value
+	+below(640px)
+		font-size: 12px
+	display table-cell
+	white-space nowrap
+	color black
+	font-weight: 700
+	vertical-align: bottom
+
+.unit-descr__title
+	font-size: 18px
+	margin-bottom: 10px
+	font-weight: 700
+
+.unit-descr__cont
+	+below(640px)
+		margin-bottom: 20px
+	margin-bottom: 50px
+	max-width 500px
+
+.goods-meters-wrap
+	+below(640px)
+		fw()
+	f()
+	.goods-meters
+		+below(640px)
+			margin-right: 0
+		&:first-child
+			margin-right: 30px
+	margin-bottom: 10px
+.unit-get
+	+below(640px)
+		fw()
+	flex(between)
+.unit-get__el
+	+below(640px)
+		width: 100%
+		&:first-child
+			margin-bottom: 20px
+	width: 48%
+	@extend .btn--md
+	padding: 20px
+	font-size: 18px
+.unit-get__el--cart
+	@extend .btn--green
+.unit-get__el--click
+	@extend .btn--light
+
+.unit-tab
+	+below(768px)
+		margin: 20px 0
+	margin: 80px 0
+.unit-tab-head
+	+below(640px)
+		white-space nowrap
+		overflow-x auto
+	f()
+
+.unit-tab-head__el
+	+below(768px)
+		font-size: 12px
+	up()
+	cp()
+	flex(mid)
+	tr(all)
+	margin-right: -1px
+	width: 100%
+	padding: 20px
+	font-size: 14px
+	text-align: center
+	border 1px solid $border-color
+	&:hover
+		background: $bg-gray
+		cursor pointer
+	background: white
+.unit-tab-head__el--active
+	border-bottom 0
+
+.unit-tab-cont
+	+below(640px)
+		padding: 15px 0
+	padding: 30px 0
+	display: none
+.unit-tab-cont--active
+	display: block
+.unit-size
+	+below(640px)
+		column-count: 1
+	column-count: 2
+	column-gap: 30px
+
+.unit-mark__list
+	display: grid
+	grid-gap 20px
+	grid-template-columns: repeat(auto-fit, minmax(7rem,1fr))
+
+.unit-mark__list-el-name
+	text-align: center
+.unit-mark__list-el
+	flex(mid)
+	fl()
+.unit-mark__list-el-color
+	size 80px
+	br(4px)
+	margin-bottom: 10px
+
+.install
+	display: grid
+	grid-row-gap 30px
+	grid-column-gap 20px
+	grid-template-columns: repeat(auto-fill, minmax(14rem,1fr))
+
+.install__el
+	f()
+	align-items: center
+.install__el-text
+	font-weight: 700
+.install__el-icon
+	margin-right: 20px
+	.icon
+		size 40px
+		fill $green
+
+.complete-tab
+	+below(640px)
+		f()
+		overflow-x scroll
+		margin-bottom: 10px
+	display: grid
+	grid-gap 20px
+	grid-template-columns: repeat(auto-fill, minmax(12rem,1fr))
+	margin-bottom: 30px
+.complete-tab__el
+	+below(640px)
+		white-space nowrap
+		margin-right: 5px
+		font-size: 12px
+		&:last-child
+			margin-right: 0
+	br(5px)
+	flex(mid)
+	cp()
+	tr(all)
+	padding: 10px
+	border 1px solid $border-color
+	text-align: center
+	&:hover
+		background: $green
+		color white
+		border-color $green
+
+.complete-tab__el--active
+	background: $green
+	color white
+	border-color $green
+
+.complete-tab-cont
+	display: none
+.complete-tab-cont--active
+	display: block
+
+.complete
+	margin-bottom: 40px
+
+.items-container
+	display: grid
+	grid-gap 20px
+	grid-template-columns: repeat(auto-fill, minmax(16rem,1fr))
+
+.item__art
+	font-size: 12px
+	color gray
+	margin-bottom: 5px
+
+.incr
+	+below(640px)
+		width: 100%
+	f()
+	justify-content: space-between
+	position relative
+	width 100px
+	user-select none
+	background: white
+.incr__nav
+	flex(mid)
+	tr(background )
+	br(5px)
+	size 34px
+	border 1px solid $border-color
+	background white
+	.icon
+		size 12px
+		fill #b3b3b3
+		opacity:1
+	&:hover
+		cp()
+		background-color $bg-gray
+		border 0
+		.icon
+			fill black
+	&:active
+		background-color $bg-gray
+.incr__val
+	flex(mid)
+	background white
+	position relative
+	tr(all)
+	color black
+	font-weight 700
+	min-width 30px
+.item__incr
+	+below(640px)
+		width: 100%
+	width: 100px
+
+.add-btn
+	flex(mid)
+	fl()
+	.elements-icr-block
+		display: none
+
+.add-btn--active
+	.elements-icr-block
+		display: block
+	.item__get
+		display: none
+
+.item-footer
+	flex(between)
+	width: 100%
+	margin-top: 20px
+.item-footer__el
+	text-decoration: underline
+	color gray
+	font-size: 12px
+	&:hover
+		color black
+
+.kind
+
+	+below(640px)
+		grid-template-columns: 1fr
+	display: grid
+	grid-gap 20px
+	grid-template-columns: repeat(auto-fill, minmax(25rem,1fr))
+	margin-bottom: 40px
+.kind-el
+	+below(480px)
+		fw()
+	f()
+	border 1px solid $border-color
+	br(5px)
+.kind-el__img-wrap
+	+below(480px)
+		width: 100%
+	width: 30%
+	padding: 20px
+.kind-el__img
+	+below(480px)
+		padding: 35% 10%
+	width: 100%
+	height: 100%
+	bg-full()
+	background-size: contain
+.kind__el-cont
+	+below(480px)
+		width: 100%
+	padding: 20px
+	width: 70%
+.kind__el-brend
+	margin-bottom: 10px
+.kind__el-title
+	font-weight:700
+	color black
+	font-size: 18px
+	margin-bottom: 10px
+
+.kind__el-price
+	margin-bottom: 20px
+	color black
+.kind__el-text
+	line-height: 1.4
+	margin-bottom: 20px
+.kind__el-color-title
+	+below(640px)
+		font-size: 12px
+	color gray
+	margin-bottom: 5px
+.kind__el-color
+	display: grid
+	grid-gap 20px
+	grid-template-columns: repeat(auto-fill, minmax(.5rem,1fr))
+.kind__el-color-item
+	size 20px
+	br(5px)
+
+.slider-wrap--simple
+	.slider-control
+		size 30px
+		background: white
+		flex(mid)
+		border 1px solid #efefef
+		.icon
+			size 12px
+			fill #c9c9c9
+	.slider-control--left
+		left 0px
+	.slider-control--right
+		right 0px
+.slider-simple
+	padding: 0 20px
+.slider-simple__el
+	bg-full()
+	padding: 30% 10%
+
+.tooltip
+	+below(1200px)
+		display: none
+	display:inline-block
+	position:relative
+	text-align:left
+	cp()
+	margin: 0 5px
+	.icon
+		size 16px
+		fill $green
+	&:hover
+		.top
+			visibility:visible
+			opacity:1
+	.top
+		min-width:240px
+		top:-10px
+		left:50%
+		transform:translate(-50%, -100%)
+		padding:10px 20px
+		background-color:#EEEEEE
+		position:absolute
+		z-index:99999999
+		box-sizing:border-box
+		visibility:hidden
+		opacity:0
+		transition:opacity 0.8s
+		@extend .type--main
+		font-weight 400
+		line-height: 1.6
+		font-size: 12px
+		i
+			position:absolute
+			top:100%
+			left:50%
+			margin-left:-12px
+			width:24px
+			height:12px
+			overflow:hidden
+			&:after
+				content:''
+				position:absolute
+				width:12px
+				height:12px
+				left:50%
+				transform:translate(-50%,-50%) rotate(45deg)
+				background-color:#EEEEEE
+				box-shadow:0 10px 15px rgba(0, 0, 0, 0.09)
+
+.unit-tech__img
+	flex(mid)
+
+.list-toggle
+	+above(1025px)
+		display: none
+	+below(640px)
+		margin-bottom: 10px
+	flex(mid)
+	cp()
+	padding: 9px 0
+	border 1px solid #e9e9e9
+	background-color #ffffff
+	width: 100%
+	font-weight:600px
+	margin-bottom: 20px
+	.icon
+		size 18px
+		margin-right: 20px
+.list-toggle__text
+	+below(768px)
+		font-size: 14px
+	up()
+	background-color #ffffff
+	font-weight:600
+.list-toggle--active
+	.icon
+		fill $green
+
+.sort-toggle
+	+above(1025px)
+		display: none
+	+below(640px)
+		margin-bottom: 10px
+	flex(mid)
+	cp()
+	padding: 9px 0
+	border 1px solid #e9e9e9
+	background-color #ffffff
+	width: 100%
+	font-weight:600px
+	margin-bottom: 20px
+	.icon
+		size 16px
+		margin-right: 20px
+.sort-toggle--active
+	.icon
+		fill $green
+.sort-toggle__text
+	+below(768px)
+		font-size: 14px
+	up()
+	background-color #ffffff
+	font-weight:600
+
+.table
+	+below(640px)
+		width: 640px
+		display: block
+		overflow-x: scroll

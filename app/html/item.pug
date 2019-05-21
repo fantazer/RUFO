@@ -10,10 +10,9 @@ include block_html/_include.pug
 
 .main-cont
 	.unit
-
 		.unit-el
 			.unit-el-view
-				.unit-el-img(style="background-image:url('img/item-1.jpg')")
+				.unit-el-img(style="background-image:url('img/item-5.jpg')")
 				.slider-wrap.slider-wrap-img-list
 					.slider-control.slider-control--green.slider-control--left
 						+icon("arrow-left","icon")
@@ -22,7 +21,7 @@ include block_html/_include.pug
 					.unit-img-list.slider-item
 						- for (var i=0;i<2;i++)
 							.unit-img-list__el-wrap
-								.unit-img-list__el.unit-img-list__el--active(style="background-image:url('img/item-1.jpg')")
+								.unit-img-list__el.unit-img-list__el--active(style="background-image:url('img/item-5.jpg')")
 							.unit-img-list__el-wrap
 								.unit-img-list__el(style="background-image:url('img/item-5.png')")
 							.unit-img-list__el-wrap
@@ -30,10 +29,65 @@ include block_html/_include.pug
 							.unit-img-list__el-wrap
 								.unit-img-list__el(style="background-image:url('img/item-5.png')")
 			.unit-el-info
+				.unit-code Код товара: 21312
 				.unit-title Металлочерепица классик GL 0,5 Atlas
+				.rating
+					.rating-text Рейтинг качества:
+					.rating-row
+						- for (var i=0;i<5;i++)
+							.rating-row__item(class=i===4?'rating-row__item--empty':'')
+								+icon("star","icon")
 				.unit-price
 					.unit-price-text Цена:
 					.unit-price-val от 359.00 р/м2
+				.unit-color
+					.unit-color__text Цвет:
+					.card-color__list
+						.filter__color
+							-  var items = ['#ed4e50','#b85ec9','#4c51c9','rgb(125, 204, 237)','#74d99e','#000000'];
+							each item in items
+								.filter__color-el(style="background-color:" + item )
+									.filter__color-ico
+										+icon("checked","icon")
+							.filter__color-el.filter__color-el--white
+								.filter__color-ico
+									+icon("checked","icon")
+				.unit-kind
+					.unit-kind__text Виды покрытия:
+					.unit-kind__val Atlas
+					.tooltip
+						+icon("question","icon")
+						.top
+							i
+							| Lorem ipsum dolor sit amet, consectetur
+				.unit-descr
+					//.unit-descr__title Atlas
+					.unit-descr__cont
+						.book-row
+							.book-row__title Гарантия на сквозную корозию:
+							.book-row__dot
+							.book-row__value 25 лет
+						.book-row
+							.book-row__title Гарантия на внешний вид:
+							.book-row__dot
+							.book-row__value 15 лет
+						.book-row
+							.book-row__title Толщина порытия:
+							.book-row__dot
+							.book-row__value 25 мкм
+						.book-row
+							.book-row__title Поверхность:
+							.book-row__dot
+							.book-row__value Гладкая
+						.book-row
+							.book-row__title Основная сторона в цвет лицевого покрытия:
+							.book-row__dot
+							.book-row__value Да
+				.goods-meters-wrap
+					.goods-meters Общая сумма заказа:
+						span 5678 Р
+					.goods-meters  Общий метраж заказа:
+						span 5м<sup>2</sup>
 				.goods-size
 					.goods-size__el
 						.goods-size__el-val
@@ -46,9 +100,222 @@ include block_html/_include.pug
 						.goods-size__el-val
 							.goods-size__el-cost 0 р
 				a(href="#").goods-gabarites-add + добавить лист другой длинны
+				.unit-get
+					.unit-get__el.unit-get__el--cart Добавить в корзину
+					.unit-get__el.unit-get__el--click Купить в 1 клик
 
-				.goods-meters  ООбщая сумма заказа:
-					span 5678 Р
-				.goods-meters  Общий метраж заказа:
-					span 5м<sup>2</sup>
+	.unit-tab
+		.unit-tab-head
+			.unit-tab-head__el.unit-tab-head__el--active описание
+			.unit-tab-head__el Характеристики
+			.unit-tab-head__el технологии
+			.unit-tab-head__el Преимущества
+			.unit-tab-head__el монтаж
+		//tab description
+		.unit-tab-cont.content.unit-tab-cont--active
+			.row
+				.col-xs-12.col-sm-6.col-md-6
+					p <strong>Металлочерепица Kamea (Камея)</strong> максимально схожа с натуральной керамической черепицей. Данный профиль был популярен еще в античности. Черепица с таким профилем конической формы всегда являлась символом достатка и изысканного вкуса.
+					p Металлочерепица Kamea (Камея) - это современный премиум-класс,самое стильное решение для Вашей кровли. Металлочерепица Kamea (Камея) изготавливается на европейском оборудовании только из высококачественной стали. Представлена в лучших покрытиях GrandLine.
+					p Металлочерепица Kamea (Камея) - это современный премиум-класс,самое стильное решение для Вашей кровли. Металлочерепица Kamea (Камея) изготавливается на европейском оборудовании только из высококачественной стали. Представлена в лучших покрытиях GrandLine.
+					p Металлочерепица Kamea (Камея) - это современный премиум-класс,самое стильное решение для Вашей кровли. Металлочерепица Kamea (Камея) изготавливается на европейском оборудовании только из высококачественной стали. Представлена в лучших покрытиях GrandLine.
+				.col-xs-12.col-sm-6.col-md-6
+					.slider-wrap.slider-wrap--simple
+						.slider-control.slider-control--left
+							+icon("arrow-left","icon")
+						.slider-control.slider-control--right
+							+icon("arrow-right","icon")
+						.slider-simple.slider-item
+							- for (var i=0;i<5;i++)
+								.slider-simple__el(style="background-image:url('img/news-4.jpg')")
+			.row
+				.col-xs-12.col-sm-6.col-md-6
+					//Через API youtube подтяни превью картинку, чтобы не грузить все ролики.
+					//https://stackoverflow.com/questions/2068344/how-do-i-get-a-youtube-video-thumbnail-from-the-youtube-api
+					.title--lg Видеобзоры
+					.slider-wrap.slider-wrap--simple
+						.slider-control.slider-control--left
+							+icon("arrow-left","icon")
+						.slider-control.slider-control--right
+							+icon("arrow-right","icon")
+						.slider-simple.slider-item
+							- for (var i=0;i<5;i++)
+								a(href="https://youtu.be/BJgoBi6AEUI").fancybox.video-link
+									.video(style="background-image:url('img/news-1.jpg')")
+										.video-filter
+										+icon("play--color","icon")
+				.col-xs-12.col-sm-6.col-md-6
+					ul
+						li Отзывы о металлической черепице чаще всего положительные, поскольку это очень надежный и доступный материал для укладки кровли. Выглядит Monterrey нарядно и эстетично, она легко монтируется и прекрасно гармонирует с самыми разными архитектурными стилями.
+
+						li Купить металлическую черепицу Монтеррей производства «ИНСИ» можно в любой момент, поскольку продукция в базовых оттенках всегда есть на складе. В ином случае, сделать заказ можно по телефону или в одном из офисов компании.
+
+						li Для того чтобы сделать заказ, вам нужно знать необходимые размеры листа. Производственные мощности позволяют нам изготовить продукцию любой длины, даже в случае, если вы хотите облицевать крышу нестандартной формы.
+
+						li Если вы цените классические формы и высокое качество, то металлочерепица Monterrey станет для вас идеальный вариантом. Ее долговечность, прочность, надежность и привлекательный внешний вид — это те качества, которые сделали данный материал таким популярным в России и за рубежом.
+
+		//tab-size
+		.unit-tab-cont
+			.unit-size
+				- for (var i=0;i<3;i++)
+					.book-row
+						.book-row__title Общая ширина
+						.book-row__dot
+						.book-row__value 1121 мм
+					.book-row
+						.book-row__title Ширина полезная:
+						.book-row__dot
+						.book-row__value 200 мм
+					.book-row
+						.book-row__title Высота волны:
+						.book-row__dot
+						.book-row__value 25 мм
+					.book-row
+						.book-row__title Шаг ступеньки:
+						.book-row__dot
+						.book-row__value 340 мм
+					.book-row
+						.book-row__title Максимальная длинна изделия:
+						.book-row__dot
+						.book-row__value 2000 мм
+
+		//tab tech
+		.unit-tab-cont
+			.row
+				.col-xs-12.col-sm-6.col-md-7
+					.title--center.title--lg Металлочерепица Камея
+					.unit-tech__img
+						img(src="img/tech.jpg", alt="")
+				.col-xs-12.col-sm-6.col-md-5.content
+					.title--lg Технические характеристики
+					ul
+						li Длина листа  от 800 до 6000 мм
+						li Высота профиля 40 мм
+						li Шаг волны 350 мм
+						li Масса 4,5 кг/м2
+						li Полная ширина листа 1186 мм
+						li Кроющая сторона листа 1100 мм
+			.unit-mark
+				.title--center.title--lg Цветовая палитра
+				.unit-mark__list
+					- for (var i=0;i<8;i++)
+						.unit-mark__list-el
+							.unit-mark__list-el-color(style="background-color:#e6eae6")
+							.unit-mark__list-el-name Красное вино
+							.unit-mark__list-el-type (RAl 305)
+
+		//tab advant
+		.unit-tab-cont.content
+			.title--lg Металлочерепица Камея
+			p Не следует, однако забывать, что дальнейшее развитие различных форм деятельности обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также укрепление и развитие структуры влечет за собой процесс внедрения и модернизации существенных финансовых и административных условий. Не следует, однако забывать, что постоянное информационно-пропагандистское обеспечение нашей деятельности позволяет оценить значение существенных финансовых и административных условий. Значимость этих проблем настолько очевидна, что дальнейшее развитие различных форм деятельности представляет собой интересный эксперимент проверки новых предложений.
+			ul
+				li Значимость этих проблем
+				li Идейные соображения высшего порядка
+				li Таким образом постоянный количественный рост
+				li Значимость этих проблем настолько очевидна
+
+			.title--lg Как подобрать размер
+
+			p Идейные соображения высшего порядка, а также новая модель организационной деятельности обеспечивает широкому кругу (специалистов) участие в формировании направлений прогрессивного развития. Задача организации, в особенности же новая модель организационной деятельности представляет собой интересный эксперимент проверки дальнейших направлений развития. Таким образом рамки и место обучения кадров играет важную роль в формировании модели развития. Не следует, однако забывать, что консультация с широким активом позволяет оценить значение модели развития.
+
+			.title--lg Подбор цвета черепицы
+			p Повседневная практика показывает, что постоянное информационно-пропагандистское обеспечение нашей деятельности требуют определения и уточнения существенных финансовых и административных условий. С другой стороны реализация намеченных плановых заданий в значительной степени обуславливает создание дальнейших направлений развития. Повседневная практика показывает, что укрепление и развитие структуры влечет за собой процесс внедрения и модернизации дальнейших направлений развития.
+
+			p Таким образом постоянный количественный рост и сфера нашей активности играет важную роль в формировании систем массового участия. Повседневная практика показывает, что консультация с широким активом способствует подготовки и реализации направлений прогрессивного развития. Значимость этих проблем настолько очевидна, что дальнейшее развитие различных форм деятельности позволяет выполнять важные задания по разработке дальнейших направлений развития. С другой стороны дальнейшее развитие различных форм деятельности обеспечивает широкому кругу (специалистов) участие в формировании соответствующий условий активизации. Идейные соображения высшего порядка, а также укрепление и развитие структуры в значительной степени обуславливает создание соответствующий условий активизации.
+
+
+
+		//tab install
+		.unit-tab-cont
+			.install
+				- for (var i=0;i<3;i++)
+					a(href="#").install__el
+						.install__el-icon
+							+icon("file","icon")
+						.install__el-text Инструкция по монтажу
+					a(href="#").install__el
+						.install__el-icon
+							+icon("file","icon")
+						.install__el-text Чертеж профнастила
+					a(href="#").install__el
+						.install__el-icon
+							+icon("file","icon")
+						.install__el-text Сертификаты
+
+
+	//.goods-banner
+		.goods-banner__el(style="background-image:url('img/main-banner.jpg')")
+
+	//complete
+	.title--lg Комплектующие
+	.complete
+		.complete-tab
+			-
+				var items = [
+					'Комплектующие',
+					'Саморезы, дюбели',
+					'Вентиляция',
+					'Элементы безопасности'
+					];
+			each item,i in items
+				.complete-tab__el(class=i===0?'complete-tab__el--active':'') #{item}
+		.complete-tab-cont.complete-tab-cont--active
+			.items-container
+				- for (var i=0;i<6;i++)
+					.item
+						.item-label.item-label--new
+							.item-label__cont New
+						.item__img(style="background-image:url('img/item-1.jpg')")
+						.item-info
+							.item__art Код: 29372
+							.item__title Керамическая черепица
+							.item__descr Uno Grand Line c 3D резом 0,5 Satin RR 32 темно-коричневый
+							.item__cost 1230 руб/м
+							.add-btn
+								.elements-icr-block
+									.incr
+										.incr__minus.incr__nav.incr--one
+											+icon("minus","icon")
+										.incr__val
+											span 1
+										.incr__plus.incr__nav
+											+icon("plus","icon")
+								.item__get В корзину
+							.item-footer
+								.item-footer__el Сравнить
+								.item-footer__el Купить  1 клик
+		.complete-tab-cont
+			p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut dicta dolorem ea eaque eius id illum itaque quis quo. Molestiae.
+
+
+	// other types
+	.title--lg Другие виды металочерепицы
+	.kind
+		- for (var i=0;i<4;i++)
+			.kind-el
+				.kind-el__img-wrap
+					.kind-el__img(style="background-image:url('img/item-3.jpeg')")
+				.kind__el-cont
+					.kind__el-brend
+						img(src="img/brend.png", alt="")
+					.kind__el-title ОМИ «Классик Монтеррей»
+					.kind__el-price от 345 руб./ м2
+					.kind__el-text Металлочерепица «Классик Монтеррей» приобрела повышенную прочность и объемный рельеф за счет увеличения высоты ступеньки до 18 мм.
+					.kind__el-color-title Возможные цвета
+					.kind__el-color
+						.kind__el-color-item(style="background-color:#873724")
+						.kind__el-color-item(style="background-color:#c84e31")
+						.kind__el-color-item(style="background-color:#c48d80")
+						.kind__el-color-item(style="background-color:#245772")
+
+	//works
+	.title--lg Примеры работ
+	.works.works--four
+		- for (var i=0;i<4;i++)
+			.works__el
+				.works__el-img(style="background-image:url('img/news-1.jpg')")
+				.works__el-content
+					.works__el-name Загородный дом
+					.works__el-title с металлочерепицей «Венеция»
+
 include ./block_html/_script.pug

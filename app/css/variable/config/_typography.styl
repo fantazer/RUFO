@@ -14,10 +14,11 @@ typeSize(fontSm,font)
 	typeSize(12,12)
 
 .type--main
-	typeSize(15,13)
+	typeSize(15,15)
 
 .type--md
 	typeSize(20,16)
+	color black
 
 .type--lg
 	typeSize(24,18)
@@ -30,12 +31,33 @@ typeSize(fontSm,font)
 	font-family: "PF Beau Sans Pro"
 	color black
 
+.title--center
+	text-align: center
 
-.title--md
+
+.title--xl
+	+below(640px)
+		margin-bottom: 15px
+	@extend .type--xl
+	font-weight: 700
+	color black
+	margin-bottom: 30px
+
+.title--lg
+	+below(640px)
+		margin-bottom: 15px
 	@extend .type--lg
-	text-transform uppercase
-	margin-bottom: 20px
+	font-weight: 700
+	color black
+	margin-bottom: 30px
 
+.title--main
+	+below(640px)
+		margin-bottom: 15px
+	@extend .type--main
+	font-weight: 700
+	color black
+	margin-bottom: 30px
 
 h1
 	@extend .type--xl

@@ -12,8 +12,13 @@ include block_html/_include.pug
 			a(href="#").bread__el #{item}
 .main-cont
 	.goods
+		.list-toggle
+			.list-toggle__icon
+				+icon("sort","icon")
+			.list-toggle__text Фильтры
+
 		.toolbar
-			// NOTE!! Если нужно сделать списку скрол добавь ..toolbar-box-cont + .scroll
+			// NOTE!! Если нужно сделать списку скрол добавь .toolbar-box-cont + .scroll
 			//Цена
 			.toolbar-box.toolbar-box--open
 				.toolbar-box-head
@@ -48,7 +53,7 @@ include block_html/_include.pug
 							.goods-profile__el
 								.goods-profile__el-title Монтерей
 								.goods-profile__el-wrap
-									.goods-profile__el-img(style="background-image:url('img/news-2.jpg')")
+									.goods-profile__el-img(style="background-image:url('img/news-1.jpg')")
 									+checkbox()
 									.goods-profile__el-style
 										img(src="img/ruf-style.jpg", alt="")
@@ -60,10 +65,13 @@ include block_html/_include.pug
 						+icon("arrow-up-fat","icon")
 				.toolbar-box-cont
 					.goods-list
-						a(href="#").goods-list__el Основа покрытия 1
-						a(href="#").goods-list__el Основа покрытия 2
-						a(href="#").goods-list__el Основа покрытия 3
-						a(href="#").goods-list__el Основа покрытия 4
+						- for (var i=0;i<5;i++)
+						.goods-list__el
+							+checkbox('Purai')
+						.goods-list__el
+							+checkbox('Purai Matt')
+						.goods-list__el
+							+checkbox('Стальной кашемир')
 			//Покрытия
 			.toolbar-box.toolbar-box--open
 				.toolbar-box-head
@@ -98,9 +106,6 @@ include block_html/_include.pug
 									+icon("checked","icon")
 
 
-
-
-
 			//Cертификаты
 			.toolbar-box.toolbar-box--open
 				.toolbar-box-head
@@ -111,7 +116,7 @@ include block_html/_include.pug
 					- for (var i=0;i<6;i++)
 						a(href="#").toolbar-doc
 							.toolbar-doc__icon
-								+icon("doc","icon")
+								+icon("file","icon")
 							.toolbar-doc__text Пример чертежей по результатам замера кровли
 			//Статьи
 			.toolbar-box.toolbar-box--open
@@ -146,6 +151,10 @@ include block_html/_include.pug
 				- for (var i=0;i<9;i++)
 					a(href="#").goods-serch__list-el матовая металлочерепица
 			//Сортировка
+			.sort-toggle
+				.sort-toggle__icon
+					+icon("filter","icon")
+				.sort-toggle__text Сортировка
 			.sort
 				.sort-el.sort-el--type
 					.sort-el__name Сортировать по:
@@ -256,16 +265,16 @@ include block_html/_include.pug
 							.goods-product__cost от <span>2345</span> р/м2
 							a(href="#").goods-product__get Каталог продукции
 			//-
-				Простая сетка https://www.bram.us/2016/10/07/simple-flexbox-grid-system/
+				Простая сетка http://flexboxgrid.com/
 			//
-			.f-grid
-				.column.column-md-6
+			.row
+				.col-xs-12.col-sm-6.col-md-6
 					h3 Как производится металлочерепица
 					a(href="https://youtu.be/BJgoBi6AEUI").fancybox.video-link
 						.video(style="background-image:url('img/news-1.jpg')")
 							.video-filter
 							+icon("play--color","icon")
-				.column.column-md-6
+				.col-xs-12.col-sm-6.col-md-6
 					h3 Как производится металлочерепица
 					a(href="https://youtu.be/BJgoBi6AEUI").fancybox.video-link
 						.video(style="background-image:url('img/news-3.jpg')")
@@ -281,7 +290,7 @@ include block_html/_include.pug
 					li Список 3
 
 			.goods-table
-				h2 Сравнительные характеристики
+				.title--lg Сравнительные характеристики
 				table.table
 					thead
 						tr
@@ -303,7 +312,7 @@ include block_html/_include.pug
 								td 0,5-5,7
 								td От эконом до премиум
 
-			h2 Примеры работ
+			.title--lg Примеры работ
 			.works
 				- for (var i=0;i<3;i++)
 					.works__el
@@ -311,10 +320,5 @@ include block_html/_include.pug
 						.works__el-content
 							.works__el-name Загородный дом
 							.works__el-title с металлочерепицей «Венеция»
-
-
-
-
-
 
 include ./block_html/_script.pug

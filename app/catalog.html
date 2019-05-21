@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="bower/ion.rangeSlider/css/ion.rangeSlider.css" />
     <link rel="stylesheet" href="bower/ion.rangeSlider/css/ion.rangeSlider.skinNice.css" />
     <link rel="stylesheet" href="bower/fancybox/dist/jquery.fancybox.css" />
+    <link rel="stylesheet" href="bower/flexboxgrid/dist/flexboxgrid.min.css" />
     <!--endbuild-->
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/style-edit.css" />
@@ -45,8 +46,16 @@
     </div>
     <div class="main-cont">
         <div class="goods">
+            <div class="list-toggle">
+                <div class="list-toggle__icon">
+                    <svg class="icon">
+                        <use xlink:href="#sort"></use>
+                    </svg>
+                </div>
+                <div class="list-toggle__text">Фильтры</div>
+            </div>
             <div class="toolbar">
-                <!-- NOTE!! Если нужно сделать списку скрол добавь ..toolbar-box-cont + .scroll-->
+                <!-- NOTE!! Если нужно сделать списку скрол добавь .toolbar-box-cont + .scroll-->
                 <!--Цена-->
                 <div class="toolbar-box toolbar-box--open">
                     <div class="toolbar-box-head">
@@ -97,7 +106,7 @@
                             <div class="goods-profile__el">
                                 <div class="goods-profile__el-title">Монтерей</div>
                                 <div class="goods-profile__el-wrap">
-                                    <div class="goods-profile__el-img" style="background-image:url('img/news-2.jpg')"></div>
+                                    <div class="goods-profile__el-img" style="background-image:url('img/news-1.jpg')"></div>
                                     <div class="check-el">
                                         <label class="style-label style-label--checkbox">
                                             <input class="sytle-input" type="checkbox" />
@@ -117,7 +126,7 @@
                             <div class="goods-profile__el">
                                 <div class="goods-profile__el-title">Монтерей</div>
                                 <div class="goods-profile__el-wrap">
-                                    <div class="goods-profile__el-img" style="background-image:url('img/news-2.jpg')"></div>
+                                    <div class="goods-profile__el-img" style="background-image:url('img/news-1.jpg')"></div>
                                     <div class="check-el">
                                         <label class="style-label style-label--checkbox">
                                             <input class="sytle-input" type="checkbox" />
@@ -137,7 +146,7 @@
                             <div class="goods-profile__el">
                                 <div class="goods-profile__el-title">Монтерей</div>
                                 <div class="goods-profile__el-wrap">
-                                    <div class="goods-profile__el-img" style="background-image:url('img/news-2.jpg')"></div>
+                                    <div class="goods-profile__el-img" style="background-image:url('img/news-1.jpg')"></div>
                                     <div class="check-el">
                                         <label class="style-label style-label--checkbox">
                                             <input class="sytle-input" type="checkbox" />
@@ -157,7 +166,7 @@
                             <div class="goods-profile__el">
                                 <div class="goods-profile__el-title">Монтерей</div>
                                 <div class="goods-profile__el-wrap">
-                                    <div class="goods-profile__el-img" style="background-image:url('img/news-2.jpg')"></div>
+                                    <div class="goods-profile__el-img" style="background-image:url('img/news-1.jpg')"></div>
                                     <div class="check-el">
                                         <label class="style-label style-label--checkbox">
                                             <input class="sytle-input" type="checkbox" />
@@ -177,7 +186,7 @@
                             <div class="goods-profile__el">
                                 <div class="goods-profile__el-title">Монтерей</div>
                                 <div class="goods-profile__el-wrap">
-                                    <div class="goods-profile__el-img" style="background-image:url('img/news-2.jpg')"></div>
+                                    <div class="goods-profile__el-img" style="background-image:url('img/news-1.jpg')"></div>
                                     <div class="check-el">
                                         <label class="style-label style-label--checkbox">
                                             <input class="sytle-input" type="checkbox" />
@@ -209,10 +218,45 @@
                     </div>
                     <div class="toolbar-box-cont">
                         <div class="goods-list">
-                            <a class="goods-list__el" href="#">Основа покрытия 1</a>
-                            <a class="goods-list__el" href="#">Основа покрытия 2</a>
-                            <a class="goods-list__el" href="#">Основа покрытия 3</a>
-                            <a class="goods-list__el" href="#">Основа покрытия 4</a>
+                            <div class="goods-list__el">
+                                <div class="check-el">
+                                    <label class="style-label style-label--checkbox">
+                                        <input class="sytle-input" type="checkbox" />
+                                        <div class="sytle-input-element">
+                                            <svg class="icon-check">
+                                                <use xlink:href="#checked"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="sytle-input-text">Purai</div>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="goods-list__el">
+                                <div class="check-el">
+                                    <label class="style-label style-label--checkbox">
+                                        <input class="sytle-input" type="checkbox" />
+                                        <div class="sytle-input-element">
+                                            <svg class="icon-check">
+                                                <use xlink:href="#checked"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="sytle-input-text">Purai Matt</div>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="goods-list__el">
+                                <div class="check-el">
+                                    <label class="style-label style-label--checkbox">
+                                        <input class="sytle-input" type="checkbox" />
+                                        <div class="sytle-input-element">
+                                            <svg class="icon-check">
+                                                <use xlink:href="#checked"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="sytle-input-text">Стальной кашемир</div>
+                                    </label>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -541,7 +585,7 @@
                         <a class="toolbar-doc" href="#">
                             <div class="toolbar-doc__icon">
                                 <svg class="icon">
-                                    <use xlink:href="#doc"></use>
+                                    <use xlink:href="#file"></use>
                                 </svg>
                             </div>
                             <div class="toolbar-doc__text">Пример чертежей по результатам замера кровли</div>
@@ -549,7 +593,7 @@
                         <a class="toolbar-doc" href="#">
                             <div class="toolbar-doc__icon">
                                 <svg class="icon">
-                                    <use xlink:href="#doc"></use>
+                                    <use xlink:href="#file"></use>
                                 </svg>
                             </div>
                             <div class="toolbar-doc__text">Пример чертежей по результатам замера кровли</div>
@@ -557,7 +601,7 @@
                         <a class="toolbar-doc" href="#">
                             <div class="toolbar-doc__icon">
                                 <svg class="icon">
-                                    <use xlink:href="#doc"></use>
+                                    <use xlink:href="#file"></use>
                                 </svg>
                             </div>
                             <div class="toolbar-doc__text">Пример чертежей по результатам замера кровли</div>
@@ -565,7 +609,7 @@
                         <a class="toolbar-doc" href="#">
                             <div class="toolbar-doc__icon">
                                 <svg class="icon">
-                                    <use xlink:href="#doc"></use>
+                                    <use xlink:href="#file"></use>
                                 </svg>
                             </div>
                             <div class="toolbar-doc__text">Пример чертежей по результатам замера кровли</div>
@@ -573,7 +617,7 @@
                         <a class="toolbar-doc" href="#">
                             <div class="toolbar-doc__icon">
                                 <svg class="icon">
-                                    <use xlink:href="#doc"></use>
+                                    <use xlink:href="#file"></use>
                                 </svg>
                             </div>
                             <div class="toolbar-doc__text">Пример чертежей по результатам замера кровли</div>
@@ -581,7 +625,7 @@
                         <a class="toolbar-doc" href="#">
                             <div class="toolbar-doc__icon">
                                 <svg class="icon">
-                                    <use xlink:href="#doc"></use>
+                                    <use xlink:href="#file"></use>
                                 </svg>
                             </div>
                             <div class="toolbar-doc__text">Пример чертежей по результатам замера кровли</div>
@@ -643,6 +687,14 @@
                     <a class="goods-serch__list-el" href="#">матовая металлочерепица</a>
                 </div>
                 <!--Сортировка-->
+                <div class="sort-toggle">
+                    <div class="sort-toggle__icon">
+                        <svg class="icon">
+                            <use xlink:href="#filter"></use>
+                        </svg>
+                    </div>
+                    <div class="sort-toggle__text">Сортировка</div>
+                </div>
                 <div class="sort">
                     <div class="sort-el sort-el--type">
                         <div class="sort-el__name">Сортировать по:</div>
@@ -1309,8 +1361,8 @@
                     </div>
                 </div>
                 <!---->
-                <div class="f-grid">
-                    <div class="column column-md-6">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-6">
                         <h3>Как производится металлочерепица</h3>
                         <a class="fancybox video-link" href="https://youtu.be/BJgoBi6AEUI">
                             <div class="video" style="background-image:url('img/news-1.jpg')">
@@ -1321,7 +1373,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="column column-md-6">
+                    <div class="col-xs-12 col-sm-6 col-md-6">
                         <h3>Как производится металлочерепица</h3>
                         <a class="fancybox video-link" href="https://youtu.be/BJgoBi6AEUI">
                             <div class="video" style="background-image:url('img/news-3.jpg')">
@@ -1346,7 +1398,7 @@
                     </ul>
                 </div>
                 <div class="goods-table">
-                    <h2>Сравнительные характеристики</h2>
+                    <div class="title--lg">Сравнительные характеристики</div>
                     <table class="table">
                         <thead>
                             <tr>
@@ -1417,7 +1469,7 @@
                         </tbody>
                     </table>
                 </div>
-                <h2>Примеры работ</h2>
+                <div class="title--lg">Примеры работ</div>
                 <div class="works">
                     <div class="works__el">
                         <div class="works__el-img" style="background-image:url('img/news-1.jpg')"></div>
@@ -1451,6 +1503,7 @@
     <script src="bower/perfect-scrollbar/js/perfect-scrollbar.jquery.js"></script>
     <script src="bower/ion.rangeSlider/js/ion.rangeSlider.js"></script>
     <script src="bower/fancybox/dist/jquery.fancybox.js"></script>
+    <script src="bower/magnify/dist/js/jquery.magnify.js"></script>
     <script src="js/add-on.js"></script>
     <!-- endbuild-->
     <script src="js/script.js"></script>
